@@ -123,6 +123,15 @@ natural language processing, healthcare, and genomics.
 
 *dịch đoạn phía trên*
 
+Trong mỗi trường hợp trên, cho dù có là lập trình viên thượng thừa cũng không thể lập trình lên được từ con số không. Có nhiều lý do khác nhau. Đôi khi chương trình mà chúng ta tìm lại có khuôn mẫu thay đổi theo thời gian, và chương trình của chúng ta cần phải thích ứng.
+Trong nhiều trường hợp khác, mối quan hệ (giả dụ như giữa các điểm ảnh và các hạng mục trừu tượng) có thể là quá phức tạp, yêu cầu hàng ngàn hay hàng triệu các phép tính vượt ra khỏi khả năng của chúng ta (mặc dù chúng ta có thể xử lý tác vụ này một cách dễ dàng bằng mắt).
+Học máy (Machine Learning - ML) là lĩnh vực nghiên cứu những kĩ thuật tiên tiến mà có thể *học* từ *kinh nghiệm*.
+Khi thuật toán học máy tích luỹ thêm nhiều kinh nghiệm, thường là dưới dạng dữ liệu quan sát hoặc tương tác với môi trường, hiệu năng của nó sẽ tăng lên.
+Tương phản với hệ thống thương mại điện tử hiện nay của chúng ta, khi mà nó luôn tuân theo nghiệp vụ phân tích đã có, mặc cho đã chạy trong thời gian dài, nhưng nó vẫn cần các lập trình viên thực hiện việc nâng cấp phần mềm này.
+Trong cuốn sách này, chúng tôi sẽ dạy cho bạn về những điều căn bản nhất về học máy, đặc biệt là học sâu, đó là một bộ các kĩ thuật tiên tiến, giúp thúc đẩy sự đổi mới ở nhiều lĩnh vực như xử lý ảnh, xử lý ngôn ngữ, chăm sóc y tế và nghiên cứu cấu trúc gen.
+
+
+
 <!-- =================== Kết thúc dịch Phần 1 ==================== -->
 
 <!-- =================== Bắt đầu dịch Phần 2 ==================== -->
