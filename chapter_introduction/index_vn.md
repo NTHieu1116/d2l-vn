@@ -30,7 +30,7 @@ that our program should take in every conceivable circumstance.
 Mãi tới gần đây, hầu như tất cả các chương trình máy tính mà chúng ta tương tác hàng ngày đều được tạo ra bởi những nhà phát triển phần mềm theo các nguyên lý lập trình cơ bản nhất. Nếu chúng ta muốn viết một ứng dụng chung cho việc quản lý thương mại điện tử. Chúng ta sẽ trao đổi và phác họa sơ bộ vấn đề như sau:
 (i) người dùng tương tác với ứng dụng qua giao diện trình duyệt web trên máy tính hoặc trên điện thoại;
 (ii) ứng dụng tương tác với một hệ thống cơ sở dữ liệu thương mại, theo dõi trạng thái và lưu giữ lại các giao dịch của người dùng; và 
-(iii) ở lõi (hay còn gọi là bộ não) của ứng dụng, được thiết kế chi tiết để ứng dụng thực thi cho từng trường hợp cụ thể.
+(iii) ở lõi (hay còn gọi là bộ não) của ứng dụng, được thiết kế chi tiết để thực thi từng trường hợp cụ thể.
 
 
 <!--
@@ -53,6 +53,14 @@ And when you are able to devise solutions that work $100\%$ of the time,
 
 *dịch đoạn phía trên*
 
+Để xây dựng *bộ não* của ứng dụng này, ta phải đưa ra tất cả các trường hợp có thể, qua đó đặt ra những quy tắc thích hợp.
+Mỗi lần người dùng nhấn để thêm một món đồ vào giỏ hàng, ta thêm một trường vào bảng giỏ hàng trong cơ sở dữ liệu, liên kết định danh ID của người dùng với định danh ID của món hàng được yêu cầu.
+Gần như rất ít lập trình viên có thể làm đúng hết trong lần đầu tiên, (sẽ cần vài lần chạy kiểm tra để xử lý hết được những trường hợp phức tạp), phần lớn chúng ta đều xây dựng từ những nguyên tắc cơ bản nhất, trước khi chính thức giới thiệu sản phẩm cho khách hàng.
+Khả năng phát triển những sản phầm và hệ thống tự động từ những nguyên tắc suy luận cơ bản nhất, thường là trong những điều kiện mới, là một kì công trong suy luận và nhận thức của con người.
+Và khi mà bạn có thể tạo ra một giải pháp mà có thể hoạt động được trong mọi tình huống, *bạn không nên sử dụng học máy*.
+
+
+
 <!--
 Fortunately for the growing community of ML scientists,
 many tasks that we would like to automate
@@ -62,6 +70,10 @@ but this time you are tackling one of the following problems:
 -->
 
 *dịch đoạn phía trên*
+
+May mắn thay cho sự tang trưởng của các nhà khoa học về học máy, nhiều tác vụ mà chúng ta muốn tự động hoá không dễ dàng bị khuất phục bởi sự tài tình của con người.
+Thử tưởng tượng bạn đang quây quần bên tấm bảng trắng với những bộ não thông minh nhất mà bạn biết, nhưng lần này bạn đang đương đầu với một trong những vấn đề dưới đây:
+
 
 <!--
 * Write a program that predicts tomorrow's weather given geographic
@@ -75,6 +87,12 @@ information, satellite images, and a trailing window of past weather.
 -->
 
 *dịch đoạn phía trên*
+
+* Viết một chương trình dự báo thời tiết cho một địa điểm xác định, có dữ liệu hình ảnh vệ tinh, và một chuỗi dữ liệu thời tiết trong quá khứ.
+* Viết một chương trình lấy đầu vào là một câu hỏi, mô tả không theo khuôn mẫu, và trả lời nó một cách chính xác.
+* Viết một chương trình cung cấp hình ảnh có thể xác định tất cả những người trong ảnh, và các nét vẽ bao quanh mỗi người.
+* Viết một chương trình hiển thị ra cho người dùng những sản phẩm mà họ có khả năng cao sẽ thích, nhưng lại ít có khả năng gặp được khi duyệt qua môt cách tự nhiên.
+
 
 <!--
 In each of these cases, even elite programmers
