@@ -2,11 +2,12 @@
 
 <!--
 # Introduction
-Giới thiệu
 -->
 
 # *dịch tiêu đề phía trên*
 :label:`chap_introduction`
+
+Giới thiệu
 
 <!--
 Until recently, nearly every computer program that interact with daily
@@ -23,7 +24,14 @@ spells out in methodical detail the appropriate action
 that our program should take in every conceivable circumstance.
 -->
 
+
 *dịch đoạn phía trên*
+
+Mãi tới gần đây, hầu như tất cả các chương trình máy tính mà chúng ta tương tác hàng ngày đều được tạo ra bởi những nhà phát triển phần mềm theo các nguyên lý lập trình cơ bản nhất. Nếu chúng ta muốn viết một ứng dụng chung cho việc quản lý thương mại điện tử. Chúng ta sẽ trao đổi và phác họa sơ bộ vấn đề như sau:
+(i) người dùng tương tác với ứng dụng qua giao diện trình duyệt web trên máy tính hoặc trên điện thoại;
+(ii) ứng dụng tương tác với một hệ thống cơ sở dữ liệu thương mại, theo dõi trạng thái và lưu giữ lại các giao dịch của người dùng; và 
+(iii) ở lõi (hay còn gọi là bộ não) của ứng dụng, được thiết kế chi tiết để ứng dụng thực thi cho từng trường hợp cụ thể.
+
 
 <!--
 To build the *brains* of our application,
