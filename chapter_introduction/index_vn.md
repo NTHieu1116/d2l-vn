@@ -568,6 +568,10 @@ fixed-length inputs means we have one less thing to worry about.
 
 *dịch đoạn phía trên*
 
+Khi mọi ví dụ được đặc trưng bởi cùng một số giá trị số, chúng tôi nói rằng dữ liệu gồm các vectơ * chiều dài cố định (fixed-length) và chúng tôi mô tả độ dài (không đổi) của vectơ như là * chiều - dimensionality * của dữ liệu.
+Như bạn có thể tưởng tượng, chiều dài cố định có thể là một thuộc tính tiện lợi. Nếu chúng ta muốn đào tạo một mô hình để nhận biết ung thư trong hình ảnh kính hiển vi, đầu vào có độ dài cố định có nghĩa là chúng ta có ít đi một điều phải lo lắng.
+
+
 <!--
 However, not all data can easily be represented as fixed length vectors.
 While we might expect microscope images to come from standard equipment,
@@ -587,6 +591,12 @@ can handle *varying-length* data.
 
 *dịch đoạn phía trên*
 
+Tuy nhiên, không phải tất cả dữ liệu có thể dễ dàng được biểu diễn dưới dạng vectơ có chiều dài cố định. Mặc dù chúng ta có được các dữ liệu ảnh từ kính hiển tiêu chuẩn, nhưng chúng ta không thể dùng hình ảnh trên Internet sẽ hiển thị với cùng độ phân giải hoặc kích cỡ.
+Đối với hình ảnh, chúng tôi có thể điều chỉnh để đưa chúng về cùng một kích thước, nhưng cách làm này không đưa chúng ta đến những kết quả như mong muốn. Có thể, chúng ta sẽ mất thông tin trong các phần bị cắt.
+Hơn nữa, dữ liệu văn bản thường không phù hợp với cách biểu diễn có độ dài cố định. Kiểu như các đánh giá của khách hàng để lại trên các trang web thương mại điện tử như Amazon, IMDB hoặc TripAdvisor.
+Nói ngắn gọn: "nó bốc mùi!". Những người khác lan man trên các trang. Một điểm thuận lợi chính của học sâu so với các phương pháp truyền thống là khả năng xử lý dữ liệu có độ dài biến đổi (varying-length).
+
+
 <!--
 Generally, the more data we have, the easier our job becomes.
 When we have more data, we can train more powerful models,
@@ -599,6 +609,10 @@ but no better than traditional approaches.
 -->
 
 *dịch đoạn phía trên*
+
+Nói chung, chúng ta càng có nhiều dữ liệu, công việc của chúng ta càng trở nên dễ dàng hơn. Khi chúng ta có nhiều dữ liệu hơn, chúng ta có thể đào tạo nhiều mô hình tốt hơn và ít phụ thuộc hơn vào các giả định được hình thành từ trước.
+Sự thay đổi chế độ từ (tương đối nhỏ) sang dữ liệu lớn là một đóng góp chính cho sự thành công của học sâu hiện đại. Nhiều mô hình học sâu tiên tiến không hoạt động nếu không có bộ dữ liệu lớn. Còn ở chế độ ít dữ liệu (low-data regime), nó không tốt hơn các phương pháp học máy truyền thống.
+
 
 <!--
 Finally it is not enough to have lots of data and to process it cleverly.
@@ -627,6 +641,15 @@ actively conspiring, or even being aware.
 
 *dịch đoạn phía trên*
 
+Cuối cùng, khi không đủ dữ liệu, chúng ta phải xử lý nó một cách khéo léo. Chúng ta cần đúng dữ liệu. Nếu dữ liệu có nhiều lỗi, hoặc nếu các tính năng được chọn không phù hợp với mục tiêu dự đoán, việc học sẽ thất bại. Kiểu như * rác vào, rác ra *. Hơn nữa, điều này cũng ảnh hưởng tới hiệu suất dự báo.
+Trong các ứng dụng nhạy cảm của học máy, như kiểm soát dự đoán, sàng lọc liên tục và mô hình đánh giá rủi ro trong ngân hàng, chúng ta phải đặc biệt cảnh giác với hậu quả của dữ liệu rác.
+Một trong các nguyên nhân thất bại hay xảy ra là do việc tạo dữ liệu để đưa vào đào tạo 
+Hãy tưởng tượng áp dụng một hệ thống nhận dạng ung thư da trong tự nhiên mà chưa từng có dữ liệu của người da màu.
+Thất bại cũng có thể xảy ra khi dữ liệu không chỉ đại diện cho một số nhóm, mà phản ánh định kiến xã hội.
+Ví dụ: nếu các quyết định tuyển dụng trong quá khứ được sử dụng để huấn luyện một mô hình dự đoán sẽ được sử dụng để sàng lọc sơ yếu lý lịch, thì các mô hình học máy có thể vô tình nắm bắt và tự động hóa những bất công lịch sử.
+Lưu ý rằng tất cả các điều này có thể xảy ra do sự chủ quan hoặc không nhận thức được của các nhà khoa học dữ liệu
+
+
 <!-- =================== Kết thúc dịch Phần 6 ==================== -->
 
 <!-- =================== Bắt đầu dịch Phần 7 ==================== -->
@@ -636,6 +659,8 @@ actively conspiring, or even being aware.
 -->
 
 ### *dịch tiêu đề phía trên*
+
+### Mô hình
 
 
 <!--
@@ -660,12 +685,22 @@ we will discuss some more traditional methods.
 
 *dịch đoạn phía trên*
 
+Thường, học máy được hiểu theo nghĩa biến đổi (transforming) dữ liệu theo một bối cảnh (sense) nào đó. Chúng tôi có thể muốn để xây dựng một hệ thống nhận dạng ảnh và dự đoán * mặt cười *. Ngoài ra, chúng tôi có thể muốn sử dụng một tập hợp các dữ liệu nhận dạng giọng nói và dự đoán mức độ * bình thường * so với * dị thường * của các bài đọc.
+Bằng mô hình * model *, chúng ta có thể đưa dữ liệu một loại và đưa ra dự đoán về một loại khác. 
+Đặc biệt, chúng tôi quan tâm tới việc ước tính các mô hình thống kê có thể được từ dữ liệu.
+ Trong khi các mô hình đơn giản hoàn toàn có khả năng giải quyết các vấn đề đơn giản một cách phù hợp, các vấn đề mà chúng tôi tập trung vào cuốn sách này đã mở rộng giới hạn cho các phương pháp cổ điển.
+Học sâu được phân biệt với các phương pháp cổ điển chủ yếu bằng tập hợp các mô hình mạnh mẽ mà nó tập trung vào.
+Các mô hình này bao gồm nhiều biến đổi liên tiếp của dữ liệu được nối với nhau từ trên xuống, do đó nó có tên là * học sâu *.
+Trên đường thảo luận về các mạng lưới thần kinh sâu sắc, chúng ta sẽ thảo luận về một số phương pháp truyền thống.
+
 
 <!--
 ###  Objective functions
 -->
 
 ### *dịch tiêu đề phía trên*
+
+###  Các hàm mục tiêu
 
 <!--
 Earlier, we introduced machine learning as "learning from experience".
