@@ -888,6 +888,9 @@ Danh sách dưới đây chỉ là một ví dụ về các vấn đề ML có t
 
 ### *dịch tiêu đề phía trên*
 
+### Học có giám sát
+
+
 <!--
 Supervised learning addresses the task of
 predicting *targets* given *inputs*.
@@ -907,6 +910,12 @@ Our goal is to produce a model $f_\theta$ that maps any input $\mathbf{x}_i$
 
 *dịch đoạn phía trên*
 
+Học có giám sát giải quyết nhiệm vụ dự đoán * mục tiêu * cho các * đầu vào * đã biết. Các mục tiêu này thường gọi là * nhãn *, thường được ký hiệu là * y *. Dữ liệu đầu vào, còn được gọi là * tính năng - features* hoặc đồng biến, thường được ký hiệu là $ \ mathbf {x} $.
+Mỗi cặp (đầu vào, đích) được gọi là một * ví dụ * hoặc * thể hiện - instances *. Đôi khi, trong bối cảnh rõ ràng, chúng tôi có thể sử dụng thuật ngữ “ví dụ”, để chỉ một tập các đầu vào, thậm chí ngay cả khi các mục tiêu tương ứng không xác định.
+Ví dụ, chúng tôi biểu thị bất kỳ trường hợp cụ thể nào với một chỉ mục, thường là $ i $ ($ \ mathbf {x} _i, y_i $).
+Tập dữ liệu là tập hợp của $ n $ cụ thể $ \ {\ mathbf {x} _i, y_i \} _ {i = 1} ^ n $. Mục tiêu của chúng tôi là tạo ra một mô hình $ f_ \ theta $ ánh xạ mọi đầu vào $ \ mathbf {x} _i $ theo dự đoán $ f _ {\ theta} (\ mathbf {x} _i) $.
+
+
 <!--
 To ground this description in a concrete example,
 if we were working in healthcare,
@@ -920,6 +929,12 @@ such as heart rate, diastolic and systolic blood pressure, etc.
 
 *dịch đoạn phía trên*
 
+Làm rõ mô tả này trong một ví dụ cụ thể, nếu chúng ta làm việc trong lĩnh vực chăm sóc sức khỏe, thì chúng ta có thể muốn dự đoán liệu bệnh nhân có bị đau tim hay không.
+Quan sát này, * đau tim * hoặc * không đau tim *,
+sẽ là nhãn của chúng tôi $ y $.
+Dữ liệu đầu vào $ \ mathbf {x} $ có thể là các dấu hiệu quan trọng như nhịp tim, huyết áp tâm trương và huyết áp tâm thu, v.v.
+
+
 <!--
 The supervision comes into play because for choosing the parameters $\theta$, we (the supervisors) provide the model with a dataset
 consisting of *labeled examples* ($\mathbf{x}_i, y_i$),
@@ -927,6 +942,8 @@ where each example $\mathbf{x}_i$ is matched with the correct label.
 -->
 
 *dịch đoạn phía trên*
+
+
 
 <!--
 In probabilistic terms, we typically are interested in estimating
