@@ -475,6 +475,11 @@ that will follow us around, no matter what kind of ML problem we take on:
 
 *dịch đoạn phía trên*
 
+Trong ví dụ nhận dạng từ đánh thức * Wake-word *, chúng tôi đã mô tả một tập dữ liệu bao gồm các đoạn âm thanh và nhãn nhị phân để tạo ảo giác  về cách chúng tôi có thể huấn luyện một mô hình để ước tính ánh xạ từ trích chọn đến phân loại.
+Loại vấn đề này, ở đó chúng tôi cố gắng dự đoán một nhãn * không xác định * được gắn với các đầu vào xác định, cung cấp một tập dữ liệu bao gồm các ví dụ, trong đó các nhãn xác định được gọi là * học có giám sát *, và nó chỉ là một trong số rất nhiều * các loại * của vấn đề học máy.
+Trong phần tiếp theo, chúng ta sẽ đi sâu vào các vấn đề học máy khác nhau. Đầu tiên, chúng tôi muốn làm sáng tỏ hơn về một số thành phần cốt lõi của học máy
+
+
 <!--
 1. The *data* that we can learn from.
 2. A *model* of how to transform the data.
@@ -483,6 +488,11 @@ that will follow us around, no matter what kind of ML problem we take on:
 -->
 
 *dịch đoạn phía trên*
+
+1. Dữ liệu * mà chúng ta có thể học.
+2. Mô hình * chuyển đổi dữ liệu như thế nào
+3. Hàm tổn thất (loss) để định lượng phần không ổn (badness) trong mô hình.
+4. Một thuật toán nhằm điều chỉnh các tham số của mô hình để giảm thiểu tổn thất.
 
 
 <!--
