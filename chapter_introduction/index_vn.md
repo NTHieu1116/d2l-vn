@@ -271,6 +271,12 @@ typically be correct as to whether (or not) the snippet contains the wake word.
 
 *dịch đoạn phía trên*
 
+
+Trước khi chúng ta có thể tiếp tục và tham gia vào thuật toán học tập, chúng ta phải xác định chính xác vấn đề, xác định chính xác bản chất của đầu vào và đầu ra và chọn một họ mô hình phù hợp. 
+Trong trường hợp này, mô hình của chúng tôi nhận được một đoạn âm thanh dưới dạng * input * và nó tạo ra một lựa chọn trong số `` {yes, no} `` như là * đầu ra *. 
+Nếu tất cả diễn ra theo kế hoạch, việc dự đoán mô hình thường chính xác, có (hay không có) từ đánh thức.
+
+
 <!--
 If we choose the right family of models,
 then there should exist one setting of the knobs
@@ -289,6 +295,11 @@ or from English sentences to Chinese sentences.
 
 *dịch đoạn phía trên*
 
+Nếu chúng ta chọn đúng họ mô hình, thì sẽ tồn tại một mô hình cho phép kích hoạt khi nghe thấy từ "Alexa". Do lựa chọn chính xác từ đánh thức là tùy ý, chúng ta sẽ cần một họ mẫu có tính đa dạng cao, thông qua nhiều thiết lập, để có thể kích hoạt khi nghe từ "Apricot".
+Chúng tôi hy vọng rằng cùng một họ gia đình phù hợp sẽ có đủ khả năng nhận dạng * "Alexa" * và * "Apricot" * do sự tương đồng của chúng.
+Tuy nhiên, chúng ta có thể cần một họ mô hình hoàn toàn khác nếu chúng ta muốn xử lý các đầu vào hoặc đầu ra khác nhau rõ rệt, chẳng hạn như chúng ta muốn ánh xạ từ hình ảnh sang chú thích hoặc từ câu tiếng Anh sang câu tiếng Trung.
+
+
 <!--
 As you might guess, if we just set all of the knobs randomly,
 it is not likely that our model will recognize "Alexa",
@@ -300,11 +311,19 @@ coercing the desired behavior from our model.
 
 *dịch đoạn phía trên*
 
+Như bạn có thể đoán, nếu chúng ta chỉ đặt ngẫu nhiên tất cả các tham số, mô hình sẽ không nhận ra được từ "Alexa", "Apricot", hoặc bất kỳ từ tiếng Anh nào khác.
+Trong học sâu, * học * là quá trình chúng ta khám phá các thiết lập đúng buộc mô hình thực hiện những hành vi như chúng ta mong muốn
+
+
 <!--
 As shown in :numref:`fig_ml_loop`, the training process usually looks like this:
 -->
 
 *dịch đoạn phía trên*
+
+
+Như được hiển thị trong: numref: `fig_ml_loop`, quá trình đào tạo thường trông như thế này:
+
 
 <!--
 1. Start off with a randomly initialized model that cannot do anything useful.
@@ -315,12 +334,22 @@ As shown in :numref:`fig_ml_loop`, the training process usually looks like this:
 
 *dịch đoạn phía trên*
 
+1. Bắt đầu với một mô hình khởi tạo ngẫu nhiên, nó  không thể dự báo bất cứ điều gì.
+1. Lấy một số dữ liệu được bạn gắn nhãn (ví dụ: đoạn âm thanh và các nhãn tương ứng `` {yes, no} ``)
+1. Tinh chỉnh các tham số để hạn chế dữ liệu đầu vào cho mô hình
+1. Lặp lại cho đến khi có được mô hình mong muốn.
+
+
 <!--
 ![A typical training process. ](../img/ml-loop.svg)
 -->
 
 ![*dịch chú thích ảnh phía trên*](../img/ml-loop.svg)
 :label:`fig_ml_loop`
+
+
+[Tiến trình đào tạo điển hình] (../ img / ml-loop.svg)
+
 
 <!-- =================== Kết thúc dịch Phần 3 ==================== -->
 
