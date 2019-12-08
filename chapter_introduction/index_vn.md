@@ -60,7 +60,6 @@ Khả năng phát triển những sản phầm và hệ thống tự động t�
 Và khi mà bạn có thể tạo ra một giải pháp mà có thể hoạt động được trong mọi tình huống, *bạn không nên sử dụng học máy*.
 
 
-
 <!--
 Fortunately for the growing community of ML scientists,
 many tasks that we would like to automate
@@ -229,6 +228,14 @@ with respect to some measure of performance on the task of interest.
 
 *dịch đoạn phía trên*
 
+Đây là mẹo. Thường, ngay cả khi chúng ta không biết rõ về cách máy tính ánh xạ từ đầu vào đến đầu ra, nhưng chúng ta vẫn có khả năng nhận thức về việc này.
+Nói cách khác, ngay cả khi bạn không biết * cách lập trình máy tính * để nhận ra từ "Alexa", nhưng bản than bạn * có thể * nhận ra từ "Alexa".
+Với khả năng này, chúng tôi có thể thu thập một lượng dữ liệu * khổng lồ * chứa các ví dụ về âm thanh và gắn nhãn cho những hành động * thực hiện* và * không thực hiện* khi từ đánh thức xuất hiện
+Theo cách tiếp cận của học máy, chúng tôi không cố gắng thiết kế một hệ thống * rõ ràng * để nhận ra từ đánh thức.
+Thay vào đó, chúng tôi định nghĩa một chương trình linh hoạt mà hành vi của nó được xác định bởi một số * tham số *.
+Sau đó, chúng tôi sử dụng bộ dữ liệu để xác định bộ tham số tốt nhất có thể, những tham số này cải thiện hiệu suất của chương trình theo hiệu năng thực hiện công việc.
+
+
 <!--
 You can think of the parameters as knobs that we can turn,
 manipulating the behavior of the program.
@@ -241,6 +248,11 @@ to choose the parameters is called a *learning algorithm*.
 -->
 
 *dịch đoạn phía trên*
+
+Bạn có thể nghĩ về các tham số như các nút mà chúng ta có thể xoay, điều khiển hành vi của chương trình. Khi chọn được tham số, chúng ta có được * mô hình *.
+Tập hợp tất cả các chương trình riêng biệt (ánh xạ đầu vào-đầu ra) mà chúng ta có thể tạo ra chỉ bằng cách điều chỉnh các tham số được gọi là * họ * của các mô hình.
+Và * chương trình meta * sử dụng tập dữ liệu của chúng tôi để chọn ra các tham số được gọi là * thuật toán học tập *.
+
 
 <!-- =================== Kết thúc dịch Phần 2 ==================== -->
 
