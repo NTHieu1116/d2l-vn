@@ -367,6 +367,11 @@ with many examples of cats and dogs, such as the images below:
 
 *dịch đoạn phía trên*
 
+Để tóm tắt, thay vì mã hóa một bộ nhận dạng từ đánh thức, chúng tôi mã hóa một chương trình có thể * học * để nhận ra các từ đánh thức, * nếu chúng tôi trình bày nó với một tập dữ liệu lớn có nhãn *.
+Bạn có thể nghĩ về hành động xác định hành vi của chương trình bằng cách mô tả nó với bộ dữ liệu dưới dạng * lập trình với dữ liệu *.
+Chúng ta có thể "lập trình" để nhận dạng mèo bằng cách cung cấp cho hệ thống máy học của chúng ta nhiều ví dụ về mèo và chó, chẳng hạn như các hình ảnh dưới đây:
+
+
 <!--
 | ![cat1](../img/cat1.png) | ![cat2](../img/cat2.jpg) | ![dog1](../img/dog1.jpg) |![dog2](../img/dog2.jpg) |
 |:---------------:|:---------------:|:---------------:|:---------------:|
@@ -376,12 +381,22 @@ with many examples of cats and dogs, such as the images below:
 *dịch đoạn phía trên*
 
 <!--
+| ![cat1](../img/cat1.png) | ![cat2](../img/cat2.jpg) | ![dog1](../img/dog1.jpg) |![dog2](../img/dog2.jpg) |
+|:---------------:|:---------------:|:---------------:|:---------------:|
+|cat|cat|dog|dog|
+-->
+
+
+<!--
 This way the detector will eventually learn to emit a very large positive number if it is a cat, a very large negative number if it is a dog,
 and something closer to zero if it is not sure,
 and this barely scratches the surface of what ML can do.
 -->
 
 *dịch đoạn phía trên*
+
+Bằng cách này, bộ nhận dạng sẽ học cách cho một kết quả dương lớn khi nó nhận ra đó là mèo, một số âm lớn nếu đó là chó và một cái gì đó gần bằng 0 nếu không chắc chắn, và điều này hầu như không làm ảnh hưởng tới những công việc của học máy.
+
 
 <!--
 Deep learning is just one among many popular methods
@@ -392,6 +407,10 @@ we should pause for a moment to highlight a couple crucial points.
 -->
 
 *dịch đoạn phía trên*
+
+Học sâu chỉ là một trong nhiều phương pháp phổ biến để giải quyết các vấn đề về máy học.
+Nhưng cho đến nay, chúng ta chỉ nói nhiều về học máy, nhưng không nói nhiều về học sâu. Để xem tại sao học sâu là quan trọng, chúng ta nên tạm dừng một lát để làm rõ một vài điểm quan trọng.
+
 
 <!--
 First, the problems that we have discussed thus far---learning
@@ -419,6 +438,14 @@ offering a unified set of tools for tackling diverse problems.
 
 *dịch đoạn phía trên*
 
+Đầu tiên, các vấn đề mà chúng ta đã thảo luận từ trước đến nay --- học từ tín hiệu âm thanh gốc, giá trị pixel của hình ảnh gốc hoặc ánh xạ giữa các câu có độ dài tùy ý và các đối tác của chúng bằng tiếng nước ngoài --- là những vấn đề mà học sâu đã giải quyết tốt hơn nhiều so với phương pháp học máy truyền thống.
+Trong các mô hình này, thì * deep - sâu * được hiểu chính xác theo nghĩa là chúng học nhiều * lớp *. Nó chỉ ra rằng các mô hình nhiều lớp này (hoặc phân cấp) có khả năng giải quyết dữ liệu nhận thức ở mức thấp theo cách mà các công cụ trước đây không thể.
+Trong những ngày qua, phần quan trọng của việc áp dụng học máy cho các vấn đề này bao gồm việc đưa ra các cách chuyển đổi dữ liệu trong một số dạng có thể hiệu chỉnh thành các mô hình nông “shallow model”     
+Một điểm thuận lợi chính của học sâu không chỉ là nó thay thế các mô hình * nông * ở bước cuối của tiến trình đào tạo mà nó còn giảm tải cho quá trình trích chọn đặc trưng (feature engineering).
+
+Thứ hai, bằng cách thay thế phần lớn việc xác định domain khi tiền xử lý (domain-specific preprocessing), học sâu đã loại bỏ nhiều hạn chế trong việc xử lý ảnh, nhận dạng giọng nói, xử lý ngôn ngữ tự nhiên, tin học y tế và các lĩnh vực ứng dụng khác, đưa ra một bộ công cụ thống nhất để giải quyết nhiều vấn đề.
+
+
 <!-- =================== Kết thúc dịch Phần 4 ==================== -->
 
 <!-- =================== Bắt đầu dịch Phần 5 ==================== -->
@@ -428,6 +455,9 @@ offering a unified set of tools for tackling diverse problems.
 -->
 
 ## *dịch tiêu đề phía trên*
+
+Các thành phần chính: Dữ liệu, Mô hình và Thuật toán
+
 
 <!--
 In our *wake-word* example, we described a dataset
