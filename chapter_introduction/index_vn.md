@@ -442,7 +442,6 @@ offering a unified set of tools for tackling diverse problems.
 Trong các mô hình này, thì * deep - sâu * được hiểu chính xác theo nghĩa là chúng học nhiều * lớp *. Nó chỉ ra rằng các mô hình nhiều lớp này (hoặc phân cấp) có khả năng giải quyết dữ liệu nhận thức ở mức thấp theo cách mà các công cụ trước đây không thể.
 Trong những ngày qua, phần quan trọng của việc áp dụng học máy cho các vấn đề này bao gồm việc đưa ra các cách chuyển đổi dữ liệu trong một số dạng có thể hiệu chỉnh thành các mô hình nông “shallow model”     
 Một điểm thuận lợi chính của học sâu không chỉ là nó thay thế các mô hình * nông * ở bước cuối của tiến trình đào tạo mà nó còn giảm tải cho quá trình trích chọn đặc trưng (feature engineering).
-
 Thứ hai, bằng cách thay thế phần lớn việc xác định domain khi tiền xử lý (domain-specific preprocessing), học sâu đã loại bỏ nhiều hạn chế trong việc xử lý ảnh, nhận dạng giọng nói, xử lý ngôn ngữ tự nhiên, tin học y tế và các lĩnh vực ứng dụng khác, đưa ra một bộ công cụ thống nhất để giải quyết nhiều vấn đề.
 
 
@@ -759,6 +758,12 @@ In these cases, it is common to optimize a *surrogate objective*.
 
 *dịch đoạn phía trên*
 
+Khi cố gắng dự đoán các giá trị số, hàm mục tiêu phổ biến nhất là lỗi bình phương $ (y- \ hat {y}) ^ 2 $.
+Để phân loại, mục tiêu chung nhất là giảm thiểu tỷ lệ lỗi, tức là tỷ lệ các trường hợp ở đó dự đoán của chúng tôi không đồng ý với dữ liệu vào.
+Một số mục tiêu (như lỗi bình phương) rất dễ tối ưu hóa. Những người khác (như tỷ lệ lỗi) rất khó để tối ưu hóa trực tiếp, do không khác biệt hoặc các biến chứng khác.
+Trong những trường hợp này, thông thường để tối ưu hóa một mục tiêu * thay thế - surrogate objective*.
+
+
 <!--
 Typically, the loss function is defined
 with respect to the model's parameters
@@ -775,6 +780,15 @@ reporting the following two quantities:
 -->
 
 *dịch đoạn phía trên*
+
+Thông thường, hàm mất được xác định theo các tham số của mô hình và phụ thuộc vào tập dữ liệu.
+Các giá trị tốt nhất của các tham số mô hình được học bằng cách giảm thiểu tổn thất phát sinh trên * tập huấn luyện * bao gồm một số * ví dụ * được thu thập để đào tạo.
+Tuy nhiên, làm tốt trên dữ liệu đào tạo không đảm bảo rằng chúng tôi sẽ làm tốt trên tập dữ liệu thử nghiệm (chưa biết trước).
+Vì vậy, chúng tôi thường muốn chia dữ liệu có sẵn thành hai phân vùng: 
+dữ liệu đào tạo (cho các tham số mô hình phù hợp) 
+và dữ liệu thử nghiệm (được tổ chức để đánh giá), 
+báo cáo hai đại lượng sau:
+
 
 <!--
  * **Training Error:**
@@ -795,6 +809,13 @@ reporting the following two quantities:
 
 *dịch đoạn phía trên*
 
+Lỗi trên dữ liệu mà mô hình đã được đào tạo. Bạn có thể nghĩ về điều này giống như điểm số của học sinh trong các kỳ thi thực hành được sử dụng để chuẩn bị cho một số kỳ thi thực sự.
+Thậm chí, ngay cả khi kết quả rất đáng khích lệ, điều đó không đảm bảo thành công cho kỳ thi cuối cùng.
+ * ** Lỗi kiểm tra: ** Đây là lỗi phát sinh trên bộ kiểm tra không biết trước. Nó có thể sai lệch đáng kể so với lỗi đào tạo.
+Khi một mô hình thực hiện tốt dữ liệu huấn luyện nhưng không thể khái quát hóa thành dữ liệu chưa biết trước, chúng tôi gọi là * quá mức *.
+Trong thực tế, nó giống như làm sai bài kiểm tra thực mặc dù làm tốt bài kiểm tra thử.
+
+
 <!-- =================== Kết thúc dịch Phần 8 ==================== -->
 
 <!-- =================== Bắt đầu dịch Phần 9 ==================== -->
@@ -804,6 +825,9 @@ reporting the following two quantities:
 -->
 
 ### *dịch tiêu đề phía trên*
+
+### Thuật toán tối ưu
+
 
 <!--
 Once we have got some data source and representation,
@@ -820,12 +844,18 @@ They then update the parameter in the direction that reduces the loss.
 
 *dịch đoạn phía trên*
 
+Ngay khi chúng tôi đã có một số nguồn dữ liệu, mô tả dữ liệu, một mô hình và một hàm mục tiêu được xác định rõ, chúng ta cần một thuật toán có khả năng tìm kiếm các tham số tốt nhất để tối thiểu giá trị hàm mục tiêu. Các thuật toán tối ưu phổ biến nhất cho các mạng thần kinh (neural networks) theo một cách tiếp cận được gọi là giảm độ dốc. 
+Nói tóm lại, ở mỗi bước, họ kiểm tra xem, cho từng tham số, cách tập dữ liệu tổn thất sẽ di chuyển nếu bạn làm nhiễu tham số đó chỉ một lượng nhỏ. Sau đó, họ cập nhật tham số theo hướng giảm tổn thất.
+
 
 <!--
 ## Kinds of Machine Learning
 -->
 
 ## *dịch tiêu đề phía trên*
+
+## Các loại học máy
+
 
 <!--
 In the following sections, we discuss a few *kinds*
@@ -841,6 +871,12 @@ for when we talk about more problems throughout the book.
 -->
 
 *dịch đoạn phía trên*
+
+Trong các phần sau, chúng tôi thảo luận một vài * loại * vấn đề về học máy một cách chi tiết hơn.
+Chúng tôi bắt đầu với một danh sách * mục tiêu *, tức là danh sách những điều mà chúng tôi muốn học máy thực hiện.
+Lưu ý rằng các mục tiêu được bổ sung bằng một tập các kỹ thuật để thực hiện chúng như thế nào, bao gồm các loại dữ liệu, mô hình, kỹ thuật đào tạo, vv
+Danh sách dưới đây chỉ là một ví dụ về các vấn đề ML có thể giải quyết để thúc đẩy người đọc và đưa ra một số thuật ngữ chung khi chúng ta nói nhiều về vấn đề này hơn trong cuốn sách.
+
 
 <!-- =================== Kết thúc dịch Phần 9 ==================== -->
 
