@@ -1205,7 +1205,7 @@ the high-level idea behind linear regression
 
 *dịch đoạn phía trên*
 
-Tuy nhiên, nếu bạn có thể dễ dàng đặt ra vấn đề của mình là "Đây có phải là một họ không?", thì nó có khả năng, là phân loại, một dạng khác của việc giám sát mà chúng tôi sẽ đề cập sau.
+Tuy nhiên, nếu bạn có thể dễ dàng đặt ra vấn đề của mình là "Đây có phải là một lớp không?", thì nó có khả năng, là phân loại, một dạng khác của việc giám sát mà chúng tôi sẽ đề cập sau.
 Ngay cả khi bạn chưa bao giờ làm việc với học máy, thì có lẽ bạn cũng đã làm việc với những vấn đề hồi quy một cách không chính thức.
 Ví dụ, hãy tưởng tượng rằng bạn đã sửa chữa cống của mình và nhà thầu của bạn đã chi $ x_1 = 3 $ giờ để loại bỏ rác khỏi đường ống nước thải của bạn.
 Sau đó, cô ấy đã gửi cho bạn một hóa đơn $ y_1 = \ $ 350 $. Bây giờ hãy tưởng tượng rằng bạn của bạn đã thuê cùng một nhà thầu với giá $ x_2 = 2 $ giờ và cô ấy đã nhận được hóa đơn $ y_2 = \ $ 250 $.
@@ -1276,6 +1276,9 @@ Như chúng ta sẽ thấy sau đó, hàm tổn thất $ L_2 $ tương ứng v�
 
 #### *dịch tiêu đề phía trên*
 
+#### Phân loại
+
+
 <!--
 While regression models are great for addressing *how many?* questions,
 lots of problems do not bend comfortably to this template.
@@ -1293,6 +1296,11 @@ than those used for regression (although many techniques will carry over).
 
 *dịch đoạn phía trên*
 
+Mặc dù mô hình hồi quy rất tốt để giải quyết câu hỏi * có bao nhiêu? *, nhưng có rất nhiều vấn đề không phù hợp với mẫu này.
+Ví dụ: một ngân hàng muốn thêm ứng dụng quét séc trên di động. Điều này sẽ liên quan đến việc khách hàng phải chụp ảnh tấm séc bằng camera thông minh của họ và mô hình học máy sẽ cần tự động hiểu hình ảnh có trong ảnh.
+Thậm chí, nó cũng cần phải hiểu rõ văn bản viết tay. Loại hệ thống này được gọi là nhận dạng ký tự quang học (OCR) và loại vấn đề mà nó giải quyết được gọi là * phân loại *. Nó được xử lý bằng một bộ thuật toán khác với các thuật toán được sử dụng cho hồi quy (mặc dù nhiều kỹ thuật sẽ khắc phục).
+
+
 <!--
 In classification, we want our model to look at a feature vector,
 e.g., the pixel values in an image,
@@ -1309,6 +1317,14 @@ in classification, we seek a *classifier*, whose output $\hat{y}$ is the predict
 -->
 
 *dịch đoạn phía trên*
+
+Trong phân loại, chúng tôi muốn mô hình của chúng tôi xem xét một vectơ đặc trưng, ví dụ: các giá trị pixel trong một ảnh, sau đó dự đoán loại nào (thường được gọi là * lớp - class *), trong vài bộ tùy chọn (có giá trị rời rạc), một ví dụ thuộc về.
+Đối với các chữ số viết tay, chúng ta có thể có 10 lớp, tương ứng với các chữ số 0 đến 9.
+
+Hình thức phân loại đơn giản nhất là khi chỉ có hai lớp, một vấn đề mà chúng ta gọi là phân loại nhị phân.
+Ví dụ: tập dữ liệu của chúng tôi $ X $ có thể bao gồm hình ảnh của động vật và * nhãn * $ Y $ của chúng tôi có thể là các lớp $ \ mathrm {\ {cat, dog \}} $.
+Trong khi hồi quy, chúng tôi đã tìm kiếm một * hồi quy * để tạo ra giá trị thực $ \ hat {y} $, trong phân loại, chúng tôi tìm kiếm một * trình phân loại *, với đầu ra $ \ hat {y} $ là gán lớp được dự đoán.
+
 
 <!--
 For reasons that we will get into as the book gets more technical,
@@ -1337,6 +1353,16 @@ and we will discuss others in more advanced chapters.
 
 *dịch đoạn phía trên*
 
+Vì những lý do đó mà chúng tôi sẽ bổ sung nhiều phần kỹ thuật hơn trong cuốn sách, thật khó để tối ưu hóa một mô hình chỉ có thể tạo ra một nhãn loại phức tạp, ví dụ: * cat * hoặc * dog *.
+Trong những trường hợp này, việc sử dụng mô hình bằng ngôn ngữ của xác suất sẽ dễ dàng hơn nhiều.
+Cho một ví dụ $ x $, mô hình của chúng tôi gán xác suất $ \ hat {y} _k $ cho mỗi nhãn $ k $. Vì đây là các xác suất, nên chúng là các số dương và tổng xác suất là $ 1 $ và do đó chúng tôi chỉ cần số $ K-1 $ để gán xác suất của danh mục $ K $.
+Điều này là dễ dàng để thực hiện phân loại nhị phân.
+Nếu có xác suất $ 0,6 $ ($ 60 \% $) mà một đồng xu không xuất hiện, thì xác suất xuất hiện của nó là $ 0,4 $ ($ 40 \% $).
+Quay trở lại ví dụ phân loại động vật của chúng tôi, một bộ phân loại có thể thấy một ảnh và đưa ra xác suất rằng hình ảnh đó là một con mèo $ P (y = \ text {cat} \ mid x) = 0.9 $.
+Chúng ta có thể diễn giải con số này bằng cách nói rằng bộ phân loại là $ 90 \% $ chắc chắn rằng hình ảnh đó mô tả một con mèo.
+Độ lớn của xác suất cho lớp dự đoán đưa ra một khái niệm về sự không chắc chắn. Đó không phải là khái niệm duy nhất về sự không chắc chắn và chúng tôi sẽ thảo luận những khái niệm khác trong các chương sau.
+
+
 <!--
 When we have more than two possible classes,
 we call the problem *multiclass classification*.
@@ -1349,6 +1375,12 @@ In MXNet Gluon, the corresponding loss function can be found [here](https://mxne
 -->
 
 *dịch đoạn phía trên*
+
+Khi chúng tôi có nhiều hơn hai lớp, chúng tôi gọi nó là * phân loại đa lớp *.
+Các ví dụ phổ biến bao gồm nhận dạng ký tự viết tay `[0, 1, 2, 3 ... 9, a, b, c, ...]`.
+Mặc dù chúng tôi đã thực hiện các vấn đề hồi quy bằng cách cố gắng giảm thiểu các hàm mất L1 hoặc L2, hàm mất chung cho các vấn đề phân loại được gọi là  entropy chéo (cross-entropy).
+Trong MXNet Glamon, hàm tổn thất tương ứng có thể được tìm thấy [tại đây] (https://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.SoftmaxCrossEntropyLoss).
+
 
 <!-- =================== Kết thúc dịch Phần 15 ==================== -->
 
@@ -1363,6 +1395,9 @@ as shown in :numref:`fig_death_cap`.
 
 *dịch đoạn phía trên*
 
+Lưu ý rằng lớp có khả năng nhất không nhất thiết là lớp bạn sẽ sử dụng cho quyết định của mình. Giả sử rằng bạn tìm thấy cây nấm xinh đẹp này trong sân sau của bạn như trong: numref: `fig_death_cap`.
+
+
 <!--
 ![Death cap---do not eat!](../img/death_cap.jpg)
 -->
@@ -1370,6 +1405,10 @@ as shown in :numref:`fig_death_cap`.
 ![*dịch chú thích ảnh phía trên*](../img/death_cap.jpg)
 :width:`200px`
 :label:`fig_death_cap`
+
+
+! [Mũ tử thần --- không ăn!] (../ img / death_cap.jpg)
+
 
 <!--
 Now, assume that you built a classifier and trained it
@@ -1390,6 +1429,14 @@ with the benefit (or harm) associated with it:
 
 *dịch đoạn phía trên*
 
+Bây giờ, giả sử rằng bạn đã xây dựng một bộ phân loại và huấn luyện nó để dự đoán xem trong ảnh là một cây nấm có độc hay không.
+Giả sử trình phân loại phát hiện chất độc của chúng tôi đưa ra $ P (y = \ mathrm {death cap} | \ mathrm {image}) = 0,2 $.
+Nói cách khác, bộ phân loại là $ 80 \% $ chắc chắn rằng nấm của chúng ta * không phải là * mũ tử thần (nấm độc). Tuy nhiên, bạn là một kẻ ngốc khi ăn nó.
+Đó là bởi vì lợi ích cho một bữa tối ngon miệng không đáng có rủi ro $ 20 \% $ để chết vì nó.
+Nói cách khác, ảnh hưởng của * rủi ro không chắc chắn * vượt xa lợi ích nó mang lại. Chúng ta có thể xem điều này rõ rang hơn.
+Về cơ bản, chúng ta cần tính toán rủi ro dự kiến mà chúng ta phải chịu, tức là, chúng ta cần nhân xác suất của kết quả với lợi ích (hoặc tác hại) liên quan đến nó:
+
+
 $$L(\mathrm{action}| x) = E_{y \sim p(y| x)}[\mathrm{loss}(\mathrm{action},y)].$$
 
 <!--
@@ -1397,6 +1444,10 @@ Hence, the loss $L$ incurred by eating the mushroom
 is $L(a=\mathrm{eat}| x) = 0.2 * \infty + 0.8 * 0 = \infty$,
 whereas the cost of discarding it is
 $L(a=\mathrm{discard}| x) = 0.2 * 0 + 0.8 * 1 = 0.8$.
+-->
+
+Do đó, tổn thất $ L $ khi ăn nấm là $ L (a = \ mathrm {eat} | x) = 0.2 * \ infty + 0.8 * 0 = \ infty $, trong khi đó chi phí loại bỏ nó là $ L (a = \ mathrm {loại bỏ} | x) = 0,2 * 0 + 0,8 * 1 = 0,8 $.
+
 
 <!--
 Our caution was justified: as any mycologist would tell us,
@@ -1414,6 +1465,13 @@ One early example is due to [Linnaeus](https://en.wikipedia.org/wiki/Carl_Linnae
 
 *dịch đoạn phía trên*
 
+Sự thận trọng của chúng tôi là có lý: bất kỳ nhà nấm học nào cũng cho rằng, nấm trên thực tế * là * một cái mũ tử thần.
+Phân loại có thể trở nên phức tạp hơn nhiều so với phân loại nhị phân, đa lớp hoặc thậm chí đa nhãn.
+Ví dụ, có một số biến thể của phân loại để giải quyết các phân cấp. Các hệ thống phân cấp cho rằng tồn tại một số mối quan hệ giữa nhiều lớp.
+Vì vậy, không phải tất cả các lỗi đều như nhau --- nếu chúng ta mắc lỗi, chúng ta thích phân loại nhầm vào một lớp có liên quan hơn là một lớp ở xa.
+Thông thường, điều này được gọi là * phân loại phân cấp *. Một ví dụ ban đầu là do [Linnaeus] (https://en.wikipedia.org/wiki/Carl_Linnaeus), người đã tổ chức các động vật theo một hệ thống phân cấp.
+
+
 <!--
 In the case of animal classification,
 it might not be so bad to mistake a poodle for a schnauzer,
@@ -1428,6 +1486,10 @@ but mistaking a rattler for a garter could be deadly.
 
 *dịch đoạn phía trên*
 
+Trong trường hợp phân loại động vật, có thể không quá tệ khi nhầm một con chó xù với một con chó schnauzer, nhưng mô hình của chúng tôi sẽ phải chịu một hình phạt rất lớn nếu nó nhầm lẫn một con chó xù với một con khủng long. Hệ thống phân cấp nào liên quan có thể phụ thuộc vào cách bạn dự định sử dụng mô hình như thế nào.
+Ví dụ, rắn rakes và rắn garter có thể ở gần trên cây phát sinh gen (phylogenetic tree), nhưng nhầm lẫn một rattler với một garter có thể gây chết người.
+
+
 <!-- =================== Kết thúc dịch Phần 16 ==================== -->
 
 <!-- =================== Bắt đầu dịch Phần 17 ==================== -->
@@ -1438,6 +1500,7 @@ but mistaking a rattler for a garter could be deadly.
 
 #### *dịch tiêu đề phía trên*
 
+### Gắn thẻ
 <!--
 Some classification problems do not fit neatly
 into the binary or multiclass classification setups.
@@ -1452,6 +1515,10 @@ encounters an image of the Town Musicians of Bremen.
 
 *dịch đoạn phía trên*
 
+Một số vấn đề phân loại không phù hợp với các thiết lập phân loại nhị phân hoặc phân loại đa lớp. Ví dụ, chúng ta có thể huấn luyện một bộ phân loại nhị phân bình thường để phân biệt mèo với chó.
+Với hiện trạng của xử lý ảnh, chúng ta có thể thực hiện điều này một cách dễ dàng, với các công cụ sẵn có. Tuy nhiên, cho dù mô hình của chúng tôi có chính xác đến đâu, chúng tôi có thể gặp rắc rối khi bộ phân loại phải xử lý hình ảnh của Nhạc sĩ Town đến từ thành phố Bremen.
+
+
 <!--
 ![A cat, a roster, a dog and a donkey](../img/stackedanimals.jpg)
 -->
@@ -1461,6 +1528,8 @@ encounters an image of the Town Musicians of Bremen.
 -->
 
 *dịch đoạn phía trên*
+
+! [Một con mèo, một danh sách, một con chó và một con lừa] (../ img / stackedanimals.jpg)
 
 
 <!--
@@ -1476,6 +1545,11 @@ saying the image depicts a cat *and* a dog *and* a donkey
 -->
 
 *dịch đoạn phía trên*
+
+Như bạn có thể thấy, có một con mèo, và một con gà trống, một con chó, một con lừa và một con chim, với một số cây trên nền của bức tranh.
+Tùy thuộc vào những gì chúng tôi muốn làm với mô hình của chúng tôi, nếu coi đây là một vấn đề phân loại nhị phân có thể không có nhiều ý nghĩa.
+Thay vào đó, chúng tôi có thể muốn đưa ra tùy chọn cho mô hình để đưa ra loại: một con mèo * và *một con chó * và * một con lừa * và * một con gà trống * và * một con chim.
+
 
 <!--
 The problem of learning to predict classes that are
@@ -1493,6 +1567,12 @@ with "programming languages".
 -->
 
 *dịch đoạn phía trên*
+
+Vấn đề học cách dự đoán các lớp * không loại trừ lẫn nhau * được gọi là phân loại đa nhãn. Việc tự động gắn thẻ thường được mô tả tốt nhất là vấn đề phân loại đa nhãn.
+Hãy nghĩ về các thẻ mọi người có thể áp dụng cho các bài đăng trên blog công nghệ, ví dụ: " học máy", "công nghệ", "tiện ích", "ngôn ngữ lập trình", "linux", "điện toán đám mây", "AWS".
+Một bài viết điển hình có thể có 5-10 thẻ được áp dụng vì các khái niệm này có tương quan.
+Các bài đăng về "điện toán đám mây" có thể đề cập đến "AWS" và các bài đăng về "học máy" cũng có thể liên quan đến "ngôn ngữ lập trình".
+
 
 <!--
 We also have to deal with this kind of problem when dealing
@@ -1512,6 +1592,12 @@ has [hosted a competition](http://bioasq.org/) to do precisely this.
 
 *dịch đoạn phía trên*
 
+Chúng ta cũng phải đối phó với loại vấn đề này khi xử lý tài liệu y sinh, trong đó việc gắn thẻ chính xác rất quan trọng vì nó cho phép các nhà nghiên cứu thực hiện các đánh giá toàn diện về tài liệu.
+Tại Thư viện Y khoa Quốc gia, một số nhà chú thích chuyên nghiệp duyệt qua từng bài viết được lập chỉ mục trong PubMed để liên kết nó với các thuật ngữ có liên quan từ MeSH, một bộ sưu tập khoảng 28k thẻ.
+Đây là một quá trình tốn thời gian và các trình chú thích thường có độ trễ một năm giữa lưu trữ và gắn thẻ. Học máy có thể được sử dụng ở đây để cung cấp các thẻ tạm thời cho đến khi mỗi bài viết có thể có một đánh giá thủ công thích hợp.
+Thật vậy, trong vài năm, tổ chức BioASQ đã [tổ chức một cuộc thi] (http://bioasq.org/) để thực hiện chính xác điều này.
+
+
 <!-- =================== Kết thúc dịch Phần 17 ==================== -->
 
 <!-- =================== Bắt đầu dịch Phần 18 ==================== -->
@@ -1521,6 +1607,9 @@ has [hosted a competition](http://bioasq.org/) to do precisely this.
 -->
 
 #### *dịch tiêu đề phía trên*
+
+#### Tìm kiếm và xếp hạng
+
 
 <!--
 Sometimes we do not just want to assign each example to a bucket
@@ -1541,6 +1630,13 @@ the ordering within the set matters.
 
 *dịch đoạn phía trên*
 
+Đôi khi chúng ta không chỉ muốn gán từng ví dụ cho một nhóm hoặc cho một giá trị thực. Trong lĩnh vực truy xuất thông tin, chúng tôi muốn áp đặt thứ hạng cho một tập hợp các mục.
+Lấy ví dụ về tìm kiếm trên web, mục tiêu sẽ ít hơn để xác định xem một trang cụ thể có phù hợp với truy vấn hay không, nhưng thay vào đó, một trong số rất nhiều kết quả tìm kiếm là * phù hợp nhất * cho một người dùng cụ thể.
+Chúng tôi thực sự quan tâm đến việc sắp xếp các kết quả tìm kiếm có liên quan và thuật toán học tập của chúng tôi cần tạo ra các tập hợp con của các phần tử từ một tập hợp lớn hơn.
+Nói cách khác, nếu chúng ta được yêu cầu tạo ra 5 chữ cái đầu tiên từ bảng chữ cái, có một sự khác biệt giữa việc trả về `` A B C D E`` và `` C A B E D``.
+Ngay cả khi tập kết quả là như nhau, nhưng thứ tự trong tập lại rất quan trọng.
+
+
 <!--
 One possible solution to this problem is to first assign
 to every element in the set a corresponding relevance score
@@ -1559,6 +1655,12 @@ There are entire academic conferences devoted to this subject.
 -->
 
 *dịch đoạn phía trên*
+
+Một giải pháp khả thi cho vấn đề này là trước tiên gán cho mọi phần tử trong tập hợp điểm tương ứng tương ứng và sau đó truy xuất các phần tử được xếp hạng cao nhất.
+[PageRank] (https://en.wikipedia.org/wiki/PageRank), nước sốt bí mật ban đầu đằng sau công cụ tìm kiếm Google là một ví dụ ban đầu của một hệ thống tính điểm như vậy nhưng nó đặc biệt ở chỗ nó không phụ thuộc vào thực tế truy vấn.
+Ở đây, họ đã dựa vào một bộ lọc liên quan đơn giản để xác định tập hợp các mục có liên quan và sau đó trên PageRank để đặt hàng các kết quả có chứa thuật ngữ truy vấn.
+Ngày nay, các công cụ tìm kiếm sử dụng các mô hình hành vi và học máy để đạt được điểm phù hợp phụ thuộc truy vấn. Có toàn bộ hội nghị học thuật dành cho chủ đề này.
+
 
 <!-- =================== Kết thúc dịch Phần 18 ==================== -->
 
