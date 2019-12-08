@@ -142,6 +142,9 @@ Trong cuốn sách này, chúng tôi sẽ dạy cho bạn về những điều c
 
 ## *dịch tiêu đề phía trên*
 
+## Một ví dụ điển hình
+
+
 <!--
 Before we could begin writing, the authors of this book,
 like much of the work force, had to become caffeinated.
@@ -162,6 +165,13 @@ can engage several machine learning models.
 
 *dịch đoạn phía trên*
 
+Trước khi bắt đầu, chúng tôi cũng giống như phần lớn các lực lượng lao động phổ thông hiện nay. Chúng tôi nhảy lên và bắt đầu lái xe. Sử dụng iPhone, Alex gọi "Hey Siri",  để đánh thức hệ thống nhận dạng giọng nói của điện thoại. Sau đó, Mu ra lệnh "chỉ đường đến quán cà phê Blue Bottle ".
+Điện thoại nhanh chóng phân tích âm thanh của anh ấy. Nó cũng nhận ra rằng chúng tôi đã yêu cầu chỉ đường và khởi động ứng dụng Bản đồ để thực hiện yêu cầu của chúng tôi.
+Sau khi hoạt động, ứng dụng Bản đồ đã xác định một số tuyến đường. Bên cạnh mỗi tuyến đường, điện thoại hiển thị thêm thời gian di chuyển dự kiến.
+Mặc dù đây là câu chuyện không có thật nhưng chúng tôi đã tạo ra để nhấn mạnh về ứng dụng của học máy cho điện thoại di động
+
+
+
 <!--
 Imagine just writing a program to respond to a *wake word*
 like "Alexa", "Okay, Google" or "Siri".
@@ -179,6 +189,15 @@ That is why we use ML.
 -->
 
 *dịch đoạn phía trên*
+
+Hãy tưởng tượng chỉ cần viết một chương trình để trả lời từ * đánh thức * như "Alexa", "Được rồi, Google" hoặc "Siri".
+Hãy thử tự mình viết code mà không có gì ngoài máy tính và trình chỉnh sửa mã, như được minh họa trong: numref: `fig_wake_word`.
+Làm thế nào bạn sẽ viết một chương trình như vậy từ các nguyên tắc đầu tiên? Hãy suy nghĩ về nó ... đây là vấn đề khó.
+Mỗi giây, điện thoại có thể thu thập khoảng 44.000 mẫu. Mỗi mẫu là một phép đo biên độ của sóng âm.
+Quy tắc nào có thể ánh xạ âm thanh ban đầu thành các dự đoán tin cậy để xác định `` {có hay không có} `` từ đánh thức trong lời nói gốc? Nếu bạn bị mắc kẹt, đừng lo lắng.
+Chúng tôi cũng không biết cách viết một chương trình như vậy từ đầu. 
+Đó là lý do tại sao chúng tôi sử dụng học máy.
+
 
 <!--
 ![Identify an awake word.](../img/wake-word.svg)
