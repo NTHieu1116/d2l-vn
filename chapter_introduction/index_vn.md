@@ -943,6 +943,7 @@ where each example $\mathbf{x}_i$ is matched with the correct label.
 
 *dịch đoạn phía trên*
 
+Việc giám sát đóng vai trò quan trọng trong việc chọn các tham số $\theta $, chúng tôi (bộ giám sát) cung cấp mô hình với một tập dữ liệu bao gồm * dữ liệu được gắn nhãn * ($ \ mathbf {x} _i, y_i $), ở đó mỗi ví dụ $ \ mathbf {x} _i $ khớp với một đúng nhãn.
 
 
 <!--
@@ -958,6 +959,11 @@ of something unknown given a particular set of available data:
 
 *dịch đoạn phía trên*
 
+Theo thuật ngữ xác suất, chúng tôi thường quan tâm đến việc ước tính xác suất có điều kiện $ P (y | x) $.
+Mặc dù nó chỉ là một trong số nhiều mô hình trong học máy, nhưng học có giám sát lại chiếm phần lớn trong các ứng dụng thành công của học máy trong công nghiệp.
+Một phần, đó là bởi vì nhiều nhiệm vụ quan trọng có thể được mô tả rõ ràng khi ước tính xác suất của một cái gì đó chưa biết với một bộ dữ liệu sẵn có
+
+
 <!--
 * Predict cancer vs not cancer, given a CT image.
 * Predict the correct translation in French, given a sentence in English.
@@ -965,6 +971,11 @@ of something unknown given a particular set of available data:
 -->
 
 *dịch đoạn phía trên*
+
+* Dự đoán ung thư hay không, dựa trên hình ảnh CT.
+* Dự đoán bản dịch chính xác bằng tiếng Pháp, đưa ra một câu bằng tiếng Anh.
+* Dự đoán giá của một cổ phiếu vào tháng tới dựa trên dữ liệu báo cáo tài chính của tháng này.
+
 
 <!-- =================== Kết thúc dịch Phần 10 ==================== -->
 
@@ -985,6 +996,11 @@ throughout the first 9 parts of this book.
 
 *dịch đoạn phía trên*
 
+Ngay cả với mô tả đơn giản "dự đoán mục tiêu từ đầu vào", việc học có giám sát có thể có rất nhiều dạng và yêu cầu nhiều quyết định mô hình hóa, tùy thuộc vào (những vấn đề cần quan tâm) loại, kích cỡ và số lượng của đầu vào và đầu ra.
+Ví dụ: chúng tôi sử dụng các mô hình khác nhau để xử lý các chuỗi (như chuỗi văn bản hoặc chuỗi dữ liệu thời gian) và để xử lý các biểu diễn dưới dạng vectơ có chiều dài cố định.
+Chúng tôi sẽ đề cập chi tiết về vấn đề này trong 9 phần đầu tiên của cuốn sách.
+
+
 <!--
 Informally, the learning process looks something like this:
 Grab a big collection of examples for which the covariates are known
@@ -998,6 +1014,11 @@ and other times we might need to employ human annotators to label the data,
 
 *dịch đoạn phía trên*
 
+Một cách không chính thức, quá trình học máy sẽ như sau:
+Thu thập một lượng lớn các mẫu có hiệp phương biến đã biết và chọn từ chúng một tập con ngẫu nhiên, thu được các nhãn có độ chính xác cao trong quá trình đào tạo (ground truth labels) ở mỗi tập hợp.
+Đôi khi các nhãn này có thể là dữ liệu đã thu thập được (ví dụ: bệnh nhân có chết trong năm sau không?) Và những lần khác chúng tôi có thể cần sử dụng các chú thích của con người để gắn nhãn dữ liệu, (ví dụ: gán hình ảnh cho các danh mục).
+
+
 <!--
 Together, these inputs and corresponding labels comprise the training set.
 We feed the training dataset into a supervised learning algorithm,
@@ -1010,6 +1031,10 @@ The full process in drawn in :numref:`fig_supervised_learning`.
 
 *dịch đoạn phía trên*
 
+Cuối cùng, chúng ta có thể cung cấp các đầu vào không xác định trước cho mô hình đã qua đào tạo, sử dụng các đầu ra của nó làm dự đoán cho các nhãn tương ứng.
+Toàn bộ quá trình được mô tả trong: numref: `fig_supervised_learning`.
+
+
 <!-- =================== Kết thúc dịch Phần 11 ==================== -->
 
 <!-- =================== Bắt đầu dịch Phần 12 ==================== -->
@@ -1021,6 +1046,8 @@ The full process in drawn in :numref:`fig_supervised_learning`.
 ![*dịch chú thích ảnh phía trên*](../img/supervised-learning.svg)
 :label:`fig_supervised_learning`
 
+! [Học có giám sát.] (../ img / giám sát-học.svg)
+
 
 <!--
 #### Regression
@@ -1028,6 +1055,7 @@ The full process in drawn in :numref:`fig_supervised_learning`.
 
 #### *dịch tiêu đề phía trên*
 
+#### Hồi quy
 <!--
 Perhaps the simplest supervised learning task
 to wrap your head around is *regression*.
@@ -1041,6 +1069,12 @@ and the corresponding *feature vector* would be one row in the table.
 -->
 
 *dịch đoạn phía trên*
+
+Có lẽ mô hình học giám sát đơn giản, nhưng quan trọng nhất là * hồi quy *.
+Hãy xem một ví dụ về một tập dữ liệu được thu thập từ cơ sở dữ liệu bán hàng tại nhà.
+Chúng ta có thể xây dựng một bảng, trong đó mỗi hàng tương ứng với một ngôi nhà khác nhau và mỗi cột tương ứng với một số thuộc tính có liên quan, chẳng hạn như diện tích của ngôi nhà, số phòng ngủ, số phòng tắm và số phút (đi bộ) đến trung tâm thị trấn.
+Trong tập dữ liệu này, mỗi * ví dụ * sẽ là một ngôi nhà cụ thể và * vectơ đặc trưng - feature vector * tương ứng sẽ là một hàng trong bảng.
+
 
 <!--
 If you live in New York or San Francisco,
@@ -1056,6 +1090,11 @@ to the full table containing all of the feature vectors as $X$.
 -->
 
 *dịch đoạn phía trên*
+
+Nếu bạn sống ở New York hoặc San Francisco và bạn không phải là Giám đốc điều hành của Amazon, Google, Microsoft hoặc Facebook, thì véc tơ đặc trưng (diện tích, số phòng ngủ, phòng tắm, khoảng cách đi bộ) cho ngôi nhà của bạn trông giống như: $ [100, 0, .5, 60] $.
+Tuy nhiên, nếu bạn sống ở Pittsburgh, nó có thể trông giống như $ [3000, 4, 3, 10] $. Các vectơ đặc trưng rất cần thiết cho hầu hết các thuật toán học máy cổ điển.
+Chúng tôi sẽ tiếp tục biểu thị vectơ đặc trưng tương ứng với bất kỳ ví dụ $ i $ nào như $ \ mathbf {x} _i $ và chúng tôi đưa ra bảng tham khảo ngắn gọn cho các vectơ đặc trưng là $ X $.
+
 
 <!--
 What makes a problem a *regression* is actually the outputs.
@@ -1074,6 +1113,12 @@ our outputs and targets as real-valued numbers.
 -->
 
 *dịch đoạn phía trên*
+
+Vấn đề * hồi quy * liên quan mật thiết tới các đầu ra. Khi bạn đang tham khảo thị trường nhà đất. Bạn sẽ muốn ước tính giá trị thị trường của một ngôi nhà, có một số tính năng như thế này.
+Giá trị mục tiêu, giá bán, là * số thực *. Nếu bạn nhớ định nghĩa về số thực, bạn có thể rất bất ngờ.
+Giá bán của các ngôi nhà không bao giờ được biểu diễn ở dạng phân số, chứ đừng nói đến số vô tỷ.
+Trong những trường hợp như thế này, khi mục tiêu là các giá trị rời rạc, nhưng ở đó việc làm tròn diễn ra ở thang đo đủ lớn (but where the rounding takes place on a sufficiently fine scale), chúng ta sẽ lạm dụng một chút ngôn ngữ để tiếp tục mô tả kết quả đầu ra và mục tiêu của chúng ta là số có giá trị thực.
+
 
 <!-- =================== Kết thúc dịch Phần 12 ==================== -->
 
@@ -1095,6 +1140,12 @@ We will unpack it more thoroughly in the subsequent chapters.
 
 *dịch đoạn phía trên*
 
+Chúng tôi biểu thị bất kỳ mục tiêu riêng lẻ $ y_i $ (tương ứng với ví dụ $ \ mathbf {x_i} $) và tập hợp tất cả các mục tiêu $ \ mathbf {y} $ (tương ứng với tất cả các ví dụ $ X $).
+Khi các mục tiêu nhận các giá trị tùy ý trong một phạm vi nào đó, chúng tôi gọi đây là vấn đề hồi quy.
+Mục tiêu của chúng tôi là tạo ra một mô hình có dự đoán gần đúng với các giá trị đích thực tế.
+Chúng tôi biểu thị mục tiêu dự đoán cho mọi trường hợp $ \ hat {y} _i $.
+Đừng quan tâm tới các ký hiệu. Chúng tôi sẽ giải thích nó kỹ hơn trong các chương tiếp theo.
+
 
 <!--
 Lots of practical problems are well-described regression problems.
@@ -1110,12 +1161,21 @@ should suggest regression.
 
 *dịch đoạn phía trên*
 
+Rất nhiều vấn đề thực tế có thể dùng mô hình hồi quy để mô tả.
+Dự đoán xếp hạng mà người xem đánh giá một bộ phim có thể được coi là vấn đề hồi quy và nếu bạn đưa ra một thuật toán tuyệt vời để hoàn thành kỳ tích này trong năm 2009, bạn có thể giành được [giải thưởng Netflix 1 triệu đô la] (https: //en.wikipedia.org/wiki/Netflix_Prize).
+Dự đoán thời gian nằm viện cho bệnh nhân trong bệnh viện cũng là một vấn đề hồi quy.
+Một quy tắc trong việc sử dụng hồi quy sẽ liên quan tới câu hỏi * Bao nhiêu? * Hoặc * Bao nhiêu? * 
+
+
 <!--
 * "How many hours will this surgery take?": *regression*
 * "How many dogs are in this photo?": *regression*.
 -->
 
 *dịch đoạn phía trên*
+
+* "Phẫu thuật này sẽ mất bao nhiêu giờ?": * Hồi quy *
+* "Có bao nhiêu con chó trong bức ảnh này?": * Hồi quy *.
 
 <!--
 However, if you can easily pose your problem as "Is this a _ ?",
@@ -1145,6 +1205,15 @@ the high-level idea behind linear regression
 
 *dịch đoạn phía trên*
 
+Tuy nhiên, nếu bạn có thể dễ dàng đặt ra vấn đề của mình là "Đây có phải là một họ không?", thì nó có khả năng, là phân loại, một dạng khác của việc giám sát mà chúng tôi sẽ đề cập sau.
+Ngay cả khi bạn chưa bao giờ làm việc với học máy, thì có lẽ bạn cũng đã làm việc với những vấn đề hồi quy một cách không chính thức.
+Ví dụ, hãy tưởng tượng rằng bạn đã sửa chữa cống của mình và nhà thầu của bạn đã chi $ x_1 = 3 $ giờ để loại bỏ rác khỏi đường ống nước thải của bạn.
+Sau đó, cô ấy đã gửi cho bạn một hóa đơn $ y_1 = \ $ 350 $. Bây giờ hãy tưởng tượng rằng bạn của bạn đã thuê cùng một nhà thầu với giá $ x_2 = 2 $ giờ và cô ấy đã nhận được hóa đơn $ y_2 = \ $ 250 $.
+Nếu sau đó ai đó hỏi bạn cần bao nhiêu tiền cho hóa đơn loại bỏ rác ở nhà của họ trong thời gian tới, bạn có thể đưa ra một số giả định hợp lý, chẳng hạn như nhiều giờ làm việc tốn nhiều đô la hơn.
+Bạn cũng có thể giả định rằng có một số khoản phí cơ bản và sau đó nhà thầu tính phí mỗi giờ. Nếu các giả định này là đúng, thì với hai điểm dữ liệu này, bạn đã có thể xác định cấu trúc giá của nhà thầu:
+\ $ 100 mỗi giờ cộng với $ 50 để xuất hiện tại nhà của bạn. Nếu bạn đã làm như vậy thì bạn đã hiểu ý tưởng cấp cao đằng sau hồi quy tuyến tính (và bạn chỉ ngầm thiết kế một mô hình tuyến tính có sai lệch).
+
+
 <!-- =================== Kết thúc dịch Phần 13 ==================== -->
 
 <!-- =================== Bắt đầu dịch Phần 14 ==================== -->
@@ -1163,6 +1232,12 @@ where
 
 *dịch đoạn phía trên*
 
+Trong trường hợp này, chúng tôi có thể tạo ra các tham số, phù hợp với giá của nhà thầu.
+Đôi khi điều đó là không thể, ví dụ, nếu một số phương sai còn nợ một số yếu tố bên cạnh hai đặc tính của bạn.
+Trong những trường hợp này, chúng tôi sẽ cố gắng đưa ra các mô hình giảm thiểu khoảng cách giữa giá dự đoán của chúng tôi và các giá trị quan sát được.
+Trong hầu hết các chương của chúng tôi, chúng tôi sẽ tập trung vào một trong hai mất mát rất phổ biến, [mất L1] (http://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss .L1Loss) ở đó
+
+
 $$l(y, y') = \sum_i |y_i-y_i'|$$
 
 <!--
@@ -1172,6 +1247,10 @@ where
 -->
 
 *dịch đoạn phía trên*
+
+Hàm tổn thất bình phương trung bình nhỏ nhất hoặc [L2 loss] (http://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.L2Loss),
+ở đó
+
 
 $$l(y, y') = \sum_i (y_i - y_i')^2.$$
 
@@ -1183,6 +1262,9 @@ of noise from a Laplace distribution.
 -->
 
 *dịch đoạn phía trên*
+
+Như chúng ta sẽ thấy sau đó, hàm tổn thất $ L_2 $ tương ứng với giả định rằng dữ liệu của chúng ta bị ảnh hưởng bởi nhiễu Gaussian, trong khi hàm tổn thất $ L_1 $ tương ứng với giả định bị nhiễu từ phân phối Laplace.
+
 
 <!-- =================== Kết thúc dịch Phần 14 ==================== -->
 
