@@ -501,6 +501,9 @@ Trong phần tiếp theo, chúng ta sẽ đi sâu vào các vấn đề học m�
 
 ### *dịch tiêu đề phía trên*
 
+Dữ liệu
+
+
 <!--
 It might go without saying that you cannot do data science without data.
 We could lose hundreds of pages pondering what precisely constitutes data,
@@ -522,6 +525,13 @@ can then simply be called the *features*,
 
 *dịch đoạn phía trên*
 
+Có thể nói rằng bạn không thể làm khoa học dữ liệu (data science) mà không có dữ liệu. Chúng tôi có thể mất hàng trăm trang để suy nghĩ chính xác những gì cấu thành dữ liệu, nhưng bây giờ chúng tôi sẽ xem khía cạnh thực tế và tập trung vào các thuộc tính quan trọng cần quan tâm.
+Nói chung, chúng tôi quan tâm đến một tập hợp * ví dụ * (còn được gọi là * các điểm dữ liệu - data points *, * mẫu - samples * hoặc * các trường hợp cụ thể - instances *).
+Để làm việc với dữ liệu một cách hữu ích, thông thường chúng ta cần đưa ra một biểu diễn số phù hợp.
+Mỗi * ví dụ * thường bao gồm một tập các thuộc tính số được gọi là đặc trưng (features). Trong các vấn đề học tập có giám sát ở trên, một tính năng đặc biệt được chỉ định là dự đoán mục tiêu (target), (đôi khi được gọi là * nhãn - label* hoặc * biến phụ thuộc - dependent variable *).
+Các tính năng đã cho từ mô hình phải đưa ra dự đoán của nó sau đó có thể được gọi một cách đơn giản là đặc trưng, (hoặc thường là * đầu vào *, * đồng biến - covariates * hoặc * biến độc lập - independent variables *).
+
+
 <!--
 If we were working with image data,
 each individual photograph might constitute an *example*,
@@ -536,6 +546,11 @@ given a standard set of features such as age, vital signs, diagnoses, etc.
 -->
 
 *dịch đoạn phía trên*
+
+Nếu chúng tôi đang làm việc với dữ liệu ảnh, mỗi bức ảnh riêng lẻ có thể tạo thành một * ví dụ *, mỗi bức ảnh được biểu thị bằng một danh sách các giá trị số tương ứng với độ sáng của từng pixel.
+Một bức ảnh màu $ 200 \ lần 200 $ ($200\times 200$ color photograph) sẽ bao gồm $ 200 \ times200 \ times3 ($200\times200\times3) = 120000 $ giá trị số, tương ứng với độ sáng của các kênh màu đỏ, xanh lục và xanh lam cho mỗi vị trí không gian.
+Trong một nhiệm vụ truyền thống hơn, chúng tôi cố gắng dự đoán một bệnh nhân sẽ sống hay không, được cung cấp bởi một số tính năng tiêu chuẩn như tuổi, các dấu hiệu quan trọng, chẩn đoán, v.v.
+
 
 <!-- =================== Kết thúc dịch Phần 5 ==================== -->
 
