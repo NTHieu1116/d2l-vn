@@ -171,7 +171,6 @@ Sau khi hoạt động, ứng dụng Bản đồ đã xác định một số tu
 Mặc dù đây là câu chuyện không có thật nhưng chúng tôi đã tạo ra để nhấn mạnh về ứng dụng của học máy cho điện thoại di động
 
 
-
 <!--
 Imagine just writing a program to respond to a *wake word*
 like "Alexa", "Okay, Google" or "Siri".
@@ -205,6 +204,9 @@ Chúng tôi cũng không biết cách viết một chương trình như vậy t�
 
 ![*dịch chú thích ảnh phía trên*](../img/wake-word.svg)
 :label:`fig_wake_word`
+
+[Xác định từ * đánh thức * ở trên.] (../ img / Wake-word.svg)
+
 
 <!--
 Here's the trick.
