@@ -713,6 +713,10 @@ constituted an improvement or a decline.
 
 *dịch đoạn phía trên*
 
+Trước đó, chúng tôi đã giới thiệu học máy là "học hỏi kinh nghiệm". Bằng cách * học * ở đây, chúng tôi có nghĩa là * cải thiện * một số nhiệm vụ theo thời gian.
+Nhưng ai là người nói điều gì tạo nên sự cải tiến? Bạn có thể tưởng tượng rằng chúng tôi có thể đề xuất cập nhật mô hình của mình và một số người có thể không đồng ý về việc liệu bản cập nhật được đề xuất có tạo ra sự cải thiện hay không.
+
+
 <!--
 In order to develop a formal mathematical system of learning machines,
 we need to have formal measures of how good (or bad) our models are.
@@ -729,6 +733,13 @@ Because lower is better, these functions are sometimes called
 -->
 
 *dịch đoạn phía trên*
+
+Để phát triển một hệ thống tính toán chính thức của máy học, chúng ta cần có các biện pháp đo kiểm mức độ tốt (hoặc xấu) của các mô hình.
+Trong học máy, và tối ưu hóa nói chung, chúng ta gọi đó là các hàm mục tiêu.
+Theo quy ước, chúng ta thường định nghĩa các hàm mục tiêu có giá trị * thấp hơn * sẽ * tốt hơn *.
+Đây chỉ đơn thuần là một quy ước. Bạn có thể nhận bất kỳ hàm nào $ f $ với mức cao hơn là tốt hơn và biến nó thành hàm mới $ f '$ giống hệt nhau về mặt chất lượng nhưng với mức thấp hơn thì tốt hơn bằng cách đặt $ f' = -f $.
+Vì thấp hơn là tốt hơn, các hàm này đôi khi được gọi là * hàm tổn thất * hoặc * hàm chi phí *.
+
 
 <!-- =================== Kết thúc dịch Phần 7 ==================== -->
 
