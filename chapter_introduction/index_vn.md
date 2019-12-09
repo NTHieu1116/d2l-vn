@@ -2388,6 +2388,9 @@ Người học củng cố phải liên tục chọn xem * khai thác * chiến 
 
 #### *dịch tiêu đề phía trên*
 
+#### MDP, kẻ cướp và bạn bè
+
+
 <!--
 The general reinforcement learning problem
 is a very general setting.
@@ -2402,6 +2405,14 @@ As a result, researchers have studied a number of
 
 *dịch đoạn phía trên*
 
+Các vấn đề học tập củng cố chung là một thiết lập rất chung chung.
+Các hành động ảnh hưởng đến các quan sát tiếp theo. Phần thưởng chỉ được quan sát tương ứng với các hành động đã chọn.
+Môi trường có thể được quan sát đầy đủ hoặc một phần.
+Kế toán cho tất cả sự phức tạp này cùng một lúc có thể yêu cầu quá nhiều nhà nghiên cứu.
+Hơn nữa, không phải mọi vấn đề thực tế đều thể hiện tất cả sự phức tạp này.
+Do đó, các nhà nghiên cứu đã nghiên cứu một số * trường hợp đặc biệt * về các vấn đề học tập củng cố.
+
+
 <!--
 When the environment is fully observed,
 we call the RL problem a *Markov Decision Process* (MDP).
@@ -2414,6 +2425,11 @@ is the classic *multi-armed bandit problem*.
 
 *dịch đoạn phía trên*
 
+Khi môi trường được quan sát đầy đủ, chúng tôi gọi vấn đề RL là * Quy trình quyết định Markov * (MDP).
+Khi trạng thái không phụ thuộc vào các hành động trước đó, chúng tôi gọi vấn đề này là * vấn đề tên cướp theo ngữ cảnh *.
+Khi không có trạng thái, chỉ cần một tập hợp các hành động có sẵn với phần thưởng ban đầu chưa biết, vấn đề này là vấn đề cổ điển * đa vũ trang *.
+
+
 <!-- =================== Kết thúc dịch Phần 26 ==================== -->
 
 <!-- =================== Bắt đầu dịch Phần 27 ==================== -->
@@ -2423,6 +2439,8 @@ is the classic *multi-armed bandit problem*.
 -->
 
 ## *dịch tiêu đề phía trên*
+
+## Nguồn gốc
 
 <!--
 Although many deep learning methods are recent inventions,
@@ -2443,6 +2461,12 @@ is perfectly described by a linear model.
 
 *dịch đoạn phía trên*
 
+Mặc dù nhiều phương pháp học sâu là những phát minh gần đây, con người đã có mong muốn phân tích dữ liệu và dự đoán kết quả trong tương lai trong nhiều thế kỷ.
+Trên thực tế, phần lớn khoa học tự nhiên có nguồn gốc từ điều này. Chẳng hạn, bản phân phối Bernoulli được đặt tên theo [Jacob Bernoulli (1655-1705)] (https://en.wikipedia.org/wiki/Jacob_Bernoulli) và bản phân phối Gaussian được phát hiện bởi [Carl Friedrich Gauss (1777-1855) ] (https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss).
+Ví dụ, ông đã phát minh ra thuật toán bình phương nhỏ nhất, vẫn được sử dụng cho vô số vấn đề từ tính toán bảo hiểm đến chẩn đoán y khoa.
+Những công cụ này đã tạo ra một cách tiếp cận thử nghiệm trong khoa học tự nhiên --- ví dụ, định luật Ohm liên quan đến dòng điện và điện áp trong một điện trở được mô tả hoàn hảo bằng mô hình tuyến tính.
+
+
 <!--
 Even in the middle ages, mathematicians had a keen intuition of estimates.
 For instance, the geometry book of [Jacob Köbel (1460-1533)](https://www.maa.org/press/periodicals/convergence/mathematical-treasures-jacob-kobels-geometry) illustrates
@@ -2451,6 +2475,10 @@ averaging the length of 16 adult men's feet to obtain the average foot length.
 
 *dịch đoạn phía trên*
 
+Ngay cả trong thời trung cổ, các nhà toán học đã có một trực giác nhạy bén của các ước tính.
+Chẳng hạn, cuốn sách hình học của [Jacob Köbel (1460-1533)] (https://www.maa.org/press/apseicals/convergence/mathologists-treasures-jacob-kobels-geometry) minh họa trung bình chiều dài của 16 người trưởng thành chân nam để có được chiều dài chân trung bình.
+
+
 <!--
 ![Estimating the length of a foot](../img/koebel.jpg)
 -->
@@ -2458,6 +2486,8 @@ averaging the length of 16 adult men's feet to obtain the average foot length.
 ![*dịch chú thích ảnh phía trên*](../img/koebel.jpg)
 :width:`500px`
 :label:`fig_koebel`
+
+! [Ước tính chiều dài của một bàn chân] (../ img / koebel.jpg)
 
 <!--
 :numref:`fig_koebel` illustrates how this estimator works.
@@ -2471,6 +2501,12 @@ This is one of the earliest examples of the trimmed mean estimate.
 -->
 
 *dịch đoạn phía trên*
+
+: numref: `fig_koebel` minh họa cách công cụ ước tính này hoạt động. 16 người đàn ông trưởng thành được yêu cầu xếp hàng liên tiếp, khi rời nhà thờ.
+Tổng chiều dài của chúng sau đó được chia cho 16 để có được ước tính cho khoảng thời gian hiện tại là 1 feet.
+"Thuật toán" này sau đó đã được cải tiến để đối phó với bàn chân biến dạng --- 2 người đàn ông có bàn chân ngắn nhất và dài nhất tương ứng được gửi đi, trung bình chỉ trong phần còn lại.
+Đây là một trong những ví dụ sớm nhất về ước tính trung bình cắt xén.
+
 
 <!--
 Statistics really took off with the collection and availability of data.
@@ -2489,6 +2525,12 @@ in industry and the natural sciences.
 
 *dịch đoạn phía trên*
 
+Thống kê thực sự cất cánh với việc thu thập và sẵn có dữ liệu.
+Một trong những người khổng lồ của nó, [Ronald Fisher (1890-1962)] (https://en.wikipedia.org/wiki/Ronald_Fisher), đã đóng góp đáng kể vào lý thuyết của nó và cả những ứng dụng của nó trong di truyền học.
+Nhiều thuật toán của ông (như Phân tích phân biệt tuyến tính) và công thức (như Ma trận thông tin Fisher) vẫn được sử dụng thường xuyên cho đến ngày nay (ngay cả bộ dữ liệu Iris mà ông phát hành năm 1936 đôi khi vẫn được sử dụng để minh họa các thuật toán học máy).
+Fisher cũng là một người ủng hộ thuyết ưu sinh, điều này sẽ nhắc nhở chúng ta rằng khoa học sử dụng dữ liệu không rõ ràng về mặt đạo đức đã tồn tại lâu dài và bền vững trong lịch sử như việc sử dụng nó trong công nghiệp và khoa học tự nhiên.
+
+
 <!-- =================== Kết thúc dịch Phần 27 ==================== -->
 
 <!-- =================== Bắt đầu dịch Phần 28 ==================== -->
@@ -2505,6 +2547,11 @@ from a machine and a human based on textual interactions.
 -->
 
 *dịch đoạn phía trên*
+
+Ảnh hưởng thứ hai đối với học máy đến từ Lý thuyết thông tin [(Claude Shannon, 1916-2001)] (https://en.wikipedia.org/wiki/Claude_Shannon) và Lý thuyết tính toán thông qua [Alan Turing (1912-1954)] (https://en.wikipedia.org/wiki/Alan_Turing).
+Turing đã đặt ra câu hỏi "máy móc có thể nghĩ gì không? Trong bài báo nổi tiếng của anh ấy [Máy ​​tính và trí thông minh] (https://en.wikipedia.org/wiki/Computing_Machowder_and_Intellect) (Mind, tháng 10 năm 1950).
+Trong những gì ông mô tả là thử nghiệm Turing, một cỗ máy có thể được coi là thông minh nếu người đánh giá con người khó phân biệt giữa trả lời từ máy và con người dựa trên tương tác văn bản.
+
 
 <!--
 Another influence can be found in neuroscience and psychology.
@@ -2525,6 +2572,13 @@ of the parameters in a neural network.
 
 *dịch đoạn phía trên*
 
+Một ảnh hưởng khác có thể được tìm thấy trong khoa học thần kinh và tâm lý học.
+Rốt cuộc, con người thể hiện rõ ràng hành vi thông minh. Do đó, chỉ hợp lý để hỏi liệu người ta có thể giải thích và có thể đảo ngược khả năng này không.
+Một trong những thuật toán lâu đời nhất được truyền cảm hứng theo kiểu này được xây dựng bởi [Donald Hebb (1904-1985)] (https://en.wikipedia.org/wiki/Donald_O._Hebb).
+Trong cuốn sách đột phá của mình Tổ chức hành vi: trích dẫn: `Hebb.Hebb.1949`, ông đã đặt ra rằng các tế bào thần kinh học bằng cách củng cố tích cực.
+Điều này đã được biết đến như là quy tắc học tập của người Do Thái. Nó là nguyên mẫu của thuật toán học tri giác của Rosenblatt và nó đặt nền móng cho nhiều thuật toán giảm độ dốc ngẫu nhiên làm nền tảng cho việc học sâu ngày nay: củng cố hành vi mong muốn và giảm bớt hành vi không mong muốn để có được các cài đặt tốt của các tham số trong mạng lưới thần kinh.
+
+
 <!--
 Biological inspiration is what gave *neural networks* their name.
 For over a century (dating back to the models of Alexander Bain, 1873
@@ -2537,12 +2591,20 @@ that can be found in most networks today:
 
 *dịch đoạn phía trên*
 
+Cảm hứng sinh học là những gì đã cho * mạng lưới thần kinh * tên của họ. Trong hơn một thế kỷ (bắt nguồn từ các mô hình của Alexander Bain, 1873 và James Sherrington, 1890), các nhà nghiên cứu đã cố gắng lắp ráp các mạch tính toán giống như các mạng lưới các nơ-ron tương tác.
+Theo thời gian, việc giải thích sinh học đã trở nên ít nghĩa đen hơn nhưng tên bị kẹt. Tại trung tâm của nó, nói dối một số nguyên tắc chính có thể được tìm thấy trong hầu hết các mạng ngày nay:
+
+
 <!--
 * The alternation of linear and nonlinear processing units, often referred to as *layers*.
 * The use of the chain rule (also known as *backpropagation*) for adjusting parameters in the entire network at once.
 -->
 
 *dịch đoạn phía trên*
+
+* Sự xen kẽ của các đơn vị xử lý tuyến tính và phi tuyến, thường được gọi là * lớp *.
+* Việc sử dụng quy tắc chuỗi (còn được gọi là * backpropagation *) để điều chỉnh các tham số trong toàn bộ mạng cùng một lúc.
+
 
 <!--
 After initial rapid progress, research in neural networks
@@ -2559,6 +2621,13 @@ MNIST with its 60,000 handwritten digits was considered huge.
 
 *dịch đoạn phía trên*
 
+Sau những tiến bộ nhanh chóng ban đầu, nghiên cứu về các mạng lưới thần kinh đã mất dần từ khoảng năm 1995 đến năm 2005.
+Điều này là do một số lý do. Đào tạo một mạng là tính toán rất tốn kém.
+Trong khi RAM rất dồi dào vào cuối thế kỷ qua, sức mạnh tính toán còn khan hiếm.
+Thứ hai, bộ dữ liệu tương đối nhỏ. Trên thực tế, bộ dữ liệu Iris của Fisher từ năm 1932 là một công cụ phổ biến để kiểm tra tính hiệu quả của các thuật toán.
+MNIST với 60.000 chữ số viết tay được coi là rất lớn
+
+
 <!--
 Given the scarcity of data and computation,
 strong statistical tools such as Kernel Methods,
@@ -2569,6 +2638,14 @@ and provided predictable results with strong theoretical guarantees.
 
 *dịch đoạn phía trên*
 
+
+Với sự khan hiếm của dữ liệu và tính toán,
+các công cụ thống kê mạnh như Phương pháp hạt nhân,
+Cây quyết định và mô hình đồ họa tỏ ra vượt trội về mặt thực nghiệm.
+Không giống như mạng lưới thần kinh, họ không cần nhiều tuần để đào tạo
+và cung cấp kết quả dự đoán với sự đảm bảo lý thuyết mạnh mẽ.
+
+
 <!-- =================== Kết thúc dịch Phần 28 ==================== -->
 
 <!-- =================== Bắt đầu dịch Phần 29 ==================== -->
@@ -2578,6 +2655,9 @@ and provided predictable results with strong theoretical guarantees.
 -->
 
 ## *dịch tiêu đề phía trên*
+
+## Con đường tới Học sâu
+
 
 <!--
 Much of this changed with the ready availability of large amounts of data,
@@ -2592,11 +2672,24 @@ This is best illustrated in :numref:`tab_intro_decade`.
 
 *dịch đoạn phía trên*
 
+Phần lớn điều này đã thay đổi với sự sẵn có của một lượng lớn dữ liệu,
+do World Wide Web, sự ra đời của các công ty phục vụ
+Hàng trăm triệu người dùng trực tuyến, phổ biến giá rẻ,
+cảm biến chất lượng cao, lưu trữ dữ liệu giá rẻ (luật Kryder),
+và tính toán giá rẻ (định luật Moore), đặc biệt ở dạng GPU, ban đầu được thiết kế để chơi game trên máy tính.
+Đột nhiên các thuật toán và mô hình dường như không thể tính toán được
+trở nên có liên quan (và ngược lại).
+Điều này được minh họa rõ nhất trong: numref: `tab_intro_decade`.
+
+
 <!--
 :Dataset versus computer memory and computational power
 -->
 
 *dịch đoạn phía trên*
+
+: Bộ dữ liệu so với bộ nhớ máy tính và sức mạnh tính toán
+
 
 <!--
 |Decade|Dataset|Memory|Floating Point Calculations per Second|
@@ -2608,6 +2701,17 @@ This is best illustrated in :numref:`tab_intro_decade`.
 |2010|10 G (advertising)|1 GB|1 TF (Nvidia C2050)|
 |2020|1 T (social network)|100 GB|1 PF (Nvidia DGX-2)|
 :label:`tab_intro_decade`
+
+| Thập kỷ | Bộ dữ liệu | Bộ nhớ | Tính toán dấu phẩy động mỗi giây |
+|: - |: - |: - |: - |
+| 1970 | 100 (Iris) | 1 KB | 100 KF (Intel 8080) |
+| 1980 | 1 K (Giá nhà tại Boston) | 100 KB | 1 MF (Intel 80186) |
+| 1990 | 10 K (nhận dạng ký tự quang học) | 10 MB | 10 MF (Intel 80486) |
+| 2000 | 10 M (trang web) | 100 MB | 1 GF (Intel Core) |
+| 2010 | 10 G (quảng cáo) | 1 GB | 1 TF (Nvidia C2050) |
+| 2020 | 1 T (mạng xã hội) | 100 GB | 1 PF (Nvidia DGX-2) |
+: nhãn: `tab_intro_decade`
+
 
 <!--
 It is evident that RAM has not kept pace with the growth in data.
@@ -2631,6 +2735,26 @@ after laying comparatively dormant for considerable time.
 
 *dịch đoạn phía trên*
 
+
+Rõ ràng là RAM đã không theo kịp tốc độ tăng trưởng của dữ liệu.
+Đồng thời, sự gia tăng sức mạnh tính toán
+đã vượt qua dữ liệu có sẵn.
+Điều này có nghĩa là các mô hình thống kê cần thiết để trở nên hiệu quả hơn về bộ nhớ
+(điều này thường đạt được bằng cách thêm phi tuyến)
+đồng thời có thể dành nhiều thời gian hơn
+về việc tối ưu hóa các tham số này, do ngân sách tính toán tăng lên.
+Do đó, điểm ngọt trong học máy và thống kê
+chuyển từ mô hình tuyến tính (tổng quát) và phương thức kernel sang mạng sâu.
+Đây cũng là một trong những lý do tại sao nhiều trụ cột
+học sâu, chẳng hạn như tri giác đa lớp
+: trích dẫn: `McCulloch.Pitts.1943`, mạng lưới thần kinh tích chập
+: trích dẫn: `LeCun.Bottou.Bengio.ea.1998`, Bộ nhớ ngắn hạn dài
+: trích dẫn: `Hồ sơ.Schmidhuber.1997`,
+và Q-Learning: trích dẫn: `Watkins.Dayan.1992`,
+về cơ bản là "tái khám phá" trong thập kỷ qua,
+sau khi đặt tương đối im lìm trong thời gian đáng kể.
+
+
 <!--
 The recent progress in statistical models, applications, and algorithms,
 has sometimes been likened to the Cambrian Explosion:
@@ -2643,6 +2767,16 @@ over the past decade.
 -->
 
 *dịch đoạn phía trên*
+
+Những tiến bộ gần đây trong các mô hình thống kê, ứng dụng và thuật toán,
+đôi khi được ví như vụ nổ Cambrian:
+một khoảnh khắc của sự tiến bộ nhanh chóng trong sự tiến hóa của các loài.
+Thật vậy, tình trạng của nghệ thuật không chỉ là một hệ quả
+tài nguyên có sẵn, áp dụng cho các thuật toán cũ hàng thập kỷ.
+Lưu ý rằng danh sách dưới đây hầu như không làm trầy xước bề mặt
+về những ý tưởng đã giúp các nhà nghiên cứu đạt được tiến bộ to lớn
+trong thập kỷ qua.
+
 
 <!-- =================== Kết thúc dịch Phần 29 ==================== -->
 
@@ -2658,6 +2792,14 @@ over the past decade.
 -->
 
 *dịch đoạn phía trên*
+
+* Phương pháp tiểu thuyết để kiểm soát năng lực, chẳng hạn như bỏ học
+  : trích dẫn: `Srivastava.Hinton.Krizhevsky.ea.2014`
+  đã giúp giảm thiểu nguy cơ quá mức.
+  Điều này đã đạt được bằng cách áp dụng phương pháp tiêm nhiễu: trích dẫn: `Giám mục.1995`
+  trên toàn mạng, thay thế trọng số bằng các biến ngẫu nhiên
+  cho mục đích đào tạo.
+
 
 <!--
 * Attention mechanisms solved a second problem
@@ -2677,6 +2819,21 @@ over the past decade.
 
 *dịch đoạn phía trên*
 
+* Cơ chế chú ý đã giải quyết vấn đề thứ hai,
+  nó thống kê thảm họa trong hơn một thế kỷ:
+  Làm thế nào để tăng bộ nhớ và độ phức tạp của một hệ thống mà không cần
+  tăng số lượng tham số có thể học được.
+  : trích dẫn: `Bahdanau.Cho.Bengio.2014` tìm thấy một giải pháp tao nhã
+  bằng cách sử dụng những gì chỉ có thể được xem như một cấu trúc con trỏ có thể học được.
+  Thay vì phải nhớ toàn bộ câu, ví dụ:
+  cho dịch máy trong một đại diện chiều cố định,
+  tất cả những gì cần được lưu trữ là một con trỏ đến trạng thái trung gian
+  của quá trình dịch thuật. Điều này cho phép đáng kể
+  tăng độ chính xác cho các câu dài, kể từ mô hình
+  không còn cần phải nhớ toàn bộ câu trước
+  bắt đầu thế hệ của một câu mới.
+
+
 <!--
 * Multi-stage designs, e.g., via the Memory Networks (MemNets)
   :cite:`Sukhbaatar.Weston.Fergus.ea.2015` and the Neural Programmer-Interpreter :cite:`Reed.De-Freitas.2015`
@@ -2687,6 +2844,14 @@ over the past decade.
 -->
 
 *dịch đoạn phía trên*
+
+* Thiết kế nhiều giai đoạn, ví dụ: thông qua Mạng bộ nhớ (MemNets)
+  : trích dẫn: `Sukhbaatar.Weston.Fergus.ea.2015` và Lập trình viên-Phiên dịch thần kinh: trích dẫn:` Reed.De-Freitas.2015`
+  cho phép các nhà lập mô hình thống kê mô tả các phương pháp lặp để lý luận. Những công cụ này cho phép một trạng thái nội bộ của mạng sâu
+  được sửa đổi nhiều lần, do đó thực hiện các bước tiếp theo
+  trong một chuỗi lý luận, tương tự như cách một bộ xử lý
+  có thể sửa đổi bộ nhớ cho một tính toán.
+
 
 <!--
 * Another key development was the invention of GANS
@@ -2707,6 +2872,23 @@ over the past decade.
 -->
 
 *dịch đoạn phía trên*
+
+* Một phát triển quan trọng khác là phát minh ra Gans
+  : trích dẫn: `Goodfellow.Pouget-Abadie.Mirza.ea.2014`.
+  Theo truyền thống, phương pháp thống kê để ước tính mật độ
+  và các mô hình thế hệ tập trung vào việc tìm phân phối xác suất phù hợp
+  và (thường là gần đúng) các thuật toán để lấy mẫu từ chúng.
+  Kết quả là, các thuật toán này phần lớn bị hạn chế do thiếu
+  tính linh hoạt vốn có trong các mô hình thống kê.
+  Sự đổi mới quan trọng trong GAN là thay thế bộ lấy mẫu
+  bởi một thuật toán tùy ý với các tham số khác nhau.
+  Những điều này sau đó được điều chỉnh theo cách mà người phân biệt đối xử
+  (thực tế là một thử nghiệm hai mẫu) không thể phân biệt giả với dữ liệu thực. Thông qua khả năng sử dụng các thuật toán tùy ý để tạo dữ liệu,
+  nó đã mở ra ước tính mật độ cho một loạt các kỹ thuật.
+  Ví dụ về ngựa vằn phi mã: trích dẫn: `Zhu.Park.Isola.ea.2017`
+  và của những gương mặt người nổi tiếng giả mạo: trích dẫn: `Karras.Aila.Laine.ea.2017`
+  là cả hai bằng chứng cho sự tiến bộ này.
+
 
 <!--
 * In many cases, a single GPU is insufficient to process
@@ -2729,6 +2911,24 @@ over the past decade.
 
 *dịch đoạn phía trên*
 
+* Trong nhiều trường hợp, một GPU không đủ để xử lý
+  số lượng lớn dữ liệu có sẵn cho đào tạo.
+  Trong thập kỷ qua, khả năng xây dựng song song
+  thuật toán đào tạo phân tán đã được cải thiện đáng kể.
+  Một trong những thách thức chính trong việc thiết kế các thuật toán có thể mở rộng
+  đó có phải là đặc điểm của tối ưu hóa học tập sâu,
+  giảm dần độ dốc ngẫu nhiên, dựa vào tương đối
+  xe buýt nhỏ dữ liệu được xử lý.
+  Đồng thời, các lô nhỏ làm hạn chế hiệu quả của GPU.
+  Do đó, đào tạo trên 1024 GPU với kích thước nhỏ gọn là,
+  cho biết 32 hình ảnh trên mỗi lô với số lượng nhỏ
+  hình ảnh 32k. Công việc gần đây, đầu tiên bởi Li: trích dẫn: `Li.2017`,
+  và sau đó bởi: trích dẫn: `You.Gitman.Ginsburg.2017`
+  và: trích dẫn: `Jia.Song.He.ea.2018` đã đẩy kích thước lên tới 64k quan sát,
+  giảm thời gian đào tạo cho ResNet50 trên ImageNet xuống dưới 7 phút.
+  Để so sánh \ - \ - thời gian đào tạo ban đầu được đo theo thứ tự ngày.
+
+
 <!--
 * The ability to parallelize computation has also contributed quite crucially
   to progress in reinforcement learning, at least whenever simulation is an
@@ -2742,6 +2942,17 @@ over the past decade.
 -->
 
 *dịch đoạn phía trên*
+
+* Khả năng song song hóa tính toán cũng đã đóng góp khá quan trọng
+  để tiến bộ trong học tập củng cố, ít nhất là bất cứ khi nào mô phỏng là một
+  tùy chọn. Điều này đã dẫn đến sự tiến bộ đáng kể trong máy tính đạt được
+  hiệu suất siêu phàm trong Go, trò chơi Atari, Starcraft và trong vật lý
+  mô phỏng (ví dụ: sử dụng MuJoCo). Xem ví dụ
+  : trích dẫn: `Silver.Huang.Maddison.ea.2016` cho một mô tả
+  về cách đạt được điều này trong AlphaGo. Tóm lại,
+  học tập củng cố hoạt động tốt nhất nếu có sẵn nhiều bộ ba (trạng thái, hành động, phần thưởng), tức là, bất cứ khi nào có thể thử nhiều thứ để tìm hiểu xem chúng liên quan đến nhau như thế nào
+  khác Mô phỏng cung cấp một đại lộ như vậy.
+
 
 <!--
 * Deep Learning frameworks have played a crucial role
@@ -2763,6 +2974,23 @@ over the past decade.
 
 *dịch đoạn phía trên*
 
+* Khung học tập sâu đã đóng một vai trò quan trọng
+  trong việc phổ biến ý tưởng. Thế hệ đầu tiên của khung
+  cho phép mô hình hóa dễ dàng bao gồm
+  [Caffe] (https://github.com/BVLC/caffe),
+  [Ngọn đuốc] (https://github.com/torch) và
+  [Theano] (https://github.com/Theano/Theano).
+  Nhiều bài báo đã được viết bằng cách sử dụng các công cụ này.
+  Đến bây giờ, chúng đã bị thay thế bởi
+  [TensorFlow] (https://github.com/tensorflow/tensorflow),
+  thường được sử dụng thông qua API cấp cao [Keras] (https://github.com/keras-team/keras), [CNTK] (https://github.com/Microsoft/CNTK), [Caffe 2] (https: //github.com/caffe2/caffe2) và [Apache MxNet] (https://github.com/apache/incubator-mxnet). Thế hệ thứ ba của các công cụ, cụ thể là các công cụ bắt buộc để học sâu,
+  được cho là mũi nhọn của [Chainer] (https://github.com/chainer/chainer),
+  đã sử dụng một cú pháp tương tự như Python NumPy để mô tả các mô hình.
+  Ý tưởng này đã được [PyTorch] (https://github.com/pytorch/pytorch) áp dụng
+  và [API Glamon] (https://github.com/apache/incubator-mxnet) của MXNet.
+  Đây là nhóm thứ hai mà khóa học này sử dụng để dạy học sâu.
+
+
 <!--
 The division of labor between systems researchers building better tools
 and statistical modelers building better networks
@@ -2777,6 +3005,17 @@ putting it firmly into the grasp of programmers.
 
 *dịch đoạn phía trên*
 
+Sự phân công lao động giữa các nhà nghiên cứu hệ thống xây dựng các công cụ tốt hơn
+và các nhà lập mô hình thống kê xây dựng mạng lưới tốt hơn
+đã đơn giản hóa rất nhiều thứ. Ví dụ,
+đào tạo mô hình hồi quy logistic tuyến tính
+từng là một vấn đề bài tập về nhà không cần thiết,
+xứng đáng để cung cấp cho máy học mới
+Nghiên cứu sinh tại Đại học Carnegie Mellon năm 2014.
+Đến bây giờ, nhiệm vụ này có thể được thực hiện với ít hơn 10 dòng mã,
+đặt nó chắc chắn vào sự nắm bắt của các lập trình viên.
+
+
 <!-- =================== Kết thúc dịch Phần 30 ==================== -->
 
 <!-- =================== Bắt đầu dịch Phần 31 ==================== -->
@@ -2787,6 +3026,7 @@ putting it firmly into the grasp of programmers.
 
 ## *dịch tiêu đề phía trên*
 
+## Những câu chuyện thành công
 <!--
 Artificial Intelligence has a long history of delivering results
 that would be difficult to accomplish otherwise.
@@ -2806,12 +3046,32 @@ and machine learning are pervasive, albeit often hidden from sight.
 
 *dịch đoạn phía trên*
 
+Trí tuệ nhân tạo có một lịch sử lâu dài trong việc cung cấp kết quả
+điều đó sẽ khó thực hiện bằng cách khác.
+Ví dụ, thư được sắp xếp bằng nhận dạng ký tự quang học.
+Các hệ thống này đã được triển khai từ những năm 90
+(cuối cùng, đây là nguồn gốc của bộ chữ số viết tay nổi tiếng của MNIST và USPS).
+Điều tương tự cũng áp dụng cho việc đọc séc đối với tiền gửi ngân hàng và tính điểm
+uy tín của ứng viên.
+Giao dịch tài chính được kiểm tra gian lận tự động.
+Điều này tạo thành xương sống của nhiều hệ thống thanh toán thương mại điện tử,
+chẳng hạn như PayPal, Stripe, AliPay, WeChat, Apple, Visa, MasterCard.
+Các chương trình máy tính cho cờ vua đã cạnh tranh trong nhiều thập kỷ.
+Máy học thức ăn tìm kiếm, đề xuất, cá nhân hóa
+và xếp hạng trên Internet. Nói cách khác, trí tuệ nhân tạo
+và học máy là phổ biến, mặc dù thường ẩn khỏi tầm nhìn.
+
+
 <!--
 It is only recently that AI has been in the limelight, mostly due to
 solutions to problems that were considered intractable previously.
 -->
 
 *dịch đoạn phía trên*
+
+Chỉ gần đây, AI đã ở trong ánh đèn sân khấu, chủ yếu là do
+giải pháp cho các vấn đề được coi là khó chữa trước đây.
+
 
 <!-- =================== Kết thúc dịch Phần 31 ==================== -->
 
@@ -2825,6 +3085,12 @@ solutions to problems that were considered intractable previously.
 
 *dịch đoạn phía trên*
 
+
+* Các trợ lý thông minh, như Siri của Apple, Alexa của Amazon hoặc của Google
+  trợ lý có thể trả lời các câu hỏi nói với mức độ hợp lý
+  độ chính xác. Điều này bao gồm các nhiệm vụ cấp độ như bật công tắc đèn (một lợi ích cho người khuyết tật) để thực hiện các cuộc hẹn của thợ cắt tóc và cung cấp hộp thoại hỗ trợ qua điện thoại. Đây có thể là dấu hiệu đáng chú ý nhất cho thấy AI đang ảnh hưởng đến cuộc sống của chúng ta.
+
+
 <!--
 * A key ingredient in digital assistants is the ability to recognize speech
   accurately. Gradually the accuracy of such systems has increased to the point
@@ -2833,6 +3099,13 @@ solutions to problems that were considered intractable previously.
 -->
 
 *dịch đoạn phía trên*
+
+
+* Một thành phần quan trọng trong trợ lý kỹ thuật số là khả năng nhận dạng giọng nói
+  một cách chính xác. Dần dần độ chính xác của các hệ thống như vậy đã tăng lên đến mức
+  nó đạt đến sự ngang nhau của con người: trích dẫn: `Xiong.Wu.Alleva.ea.2018`
+  các ứng dụng.
+
 
 <!--
 * Object recognition likewise has come a long way. Estimating the object in a
@@ -2843,6 +3116,13 @@ solutions to problems that were considered intractable previously.
 -->
 
 *dịch đoạn phía trên*
+
+* Nhận dạng đối tượng tương tự đã đi một chặng đường dài. Ước tính đối tượng trong một
+  hình ảnh là một nhiệm vụ khá khó khăn trong năm 2010. Trên điểm chuẩn ImageNet
+  : trích dẫn: `Lin.Lv.Zhu.ea.2010` đạt tỷ lệ lỗi top 5 là 28%. Vào năm 2017,
+  : trích dẫn: `Hu.Shen.Sun.2018` đã giảm tỷ lệ lỗi này xuống 2,25%. Những kết quả tuyệt vời tương tự 
+  đã đạt được để xác định chim, hoặc chẩn đoán ung thư da.
+
 
 <!--
 * Games used to be a bastion of human intelligence.
@@ -2866,6 +3146,25 @@ solutions to problems that were considered intractable previously.
 
 *dịch đoạn phía trên*
 
+* Trò chơi từng là một pháo đài của trí tuệ con người.
+  Bắt đầu từ TDGammon [23], một chương trình để chơi Backgammon
+  sử dụng học tập củng cố sự khác biệt theo thời gian (TD),
+  sự tiến bộ về thuật toán và tính toán đã dẫn đến các thuật toán
+  cho một loạt các ứng dụng. Không giống như Backgammon,
+  cờ vua có một không gian nhà nước phức tạp hơn nhiều và tập hợp các hành động.
+  DeepBlue đánh bại Gary Kasparov, Campbell và cộng sự.
+  : trích dẫn: `Campbell.Hoane-Jr.Hsu.2002`, sử dụng song song lớn,
+  phần cứng mục đích đặc biệt và tìm kiếm hiệu quả thông qua cây trò chơi.
+  Đi vẫn khó khăn hơn, do không gian nhà nước rất lớn.
+  AlphaGo đạt được sự bình đẳng của con người vào năm 2015 ,: trích dẫn: `Silver.Huang.Maddison.ea.2016` bằng cách sử dụng Deep Learning kết hợp với lấy mẫu cây Monte Carlo.
+  Thách thức trong Poker là không gian nhà nước là
+  lớn và nó không được quan sát đầy đủ (chúng tôi không biết đối thủ '
+  thẻ). Libratus vượt quá hiệu suất của con người trong Poker bằng cách sử dụng hiệu quả
+  chiến lược có cấu trúc: trích dẫn: `Brown.Sandholm.2017`.
+  Điều này minh họa cho sự tiến bộ ấn tượng trong các trò chơi
+  và thực tế là các thuật toán tiên tiến đã đóng một phần quan trọng trong chúng.
+
+
 <!--
 * Another indication of progress in AI is the advent of self-driving cars
   and trucks. While full autonomy is not quite within reach yet,
@@ -2881,6 +3180,18 @@ solutions to problems that were considered intractable previously.
 
 *dịch đoạn phía trên*
 
+* Một dấu hiệu khác cho thấy sự tiến bộ trong AI là sự ra đời của những chiếc xe tự lái
+  và xe tải. Mặc dù quyền tự chủ hoàn toàn chưa hoàn toàn nằm trong tầm tay,
+  tiến bộ tuyệt vời đã được thực hiện theo hướng này,
+  với các công ty như Tesla, NVIDIA,
+  và các sản phẩm vận chuyển Waymo cho phép ít nhất một phần tự chủ.
+  Điều làm cho sự tự chủ hoàn toàn trở nên thách thức là lái xe đúng cách
+  đòi hỏi khả năng nhận thức, lý luận và kết hợp các quy tắc
+  thành một hệ thống. Hiện nay, học sâu được sử dụng chủ yếu
+  trong khía cạnh tầm nhìn máy tính của những vấn đề này.
+  Phần còn lại được điều chỉnh bởi các kỹ sư.
+
+
 <!-- =================== Kết thúc dịch Phần 32 ==================== -->
 
 <!-- =================== Bắt đầu dịch Phần 33 ==================== -->
@@ -2890,6 +3201,9 @@ Again, the above list barely scratches the surface of where machine learning has
 -->
 
 *dịch đoạn phía trên*
+
+Một lần nữa, danh sách trên hầu như không làm trầy xước bề mặt nơi học máy đã ảnh hưởng đến các ứng dụng thực tế. Ví dụ, người máy, hậu cần, sinh học tính toán, vật lý hạt và thiên văn học có một số tiến bộ ấn tượng gần đây nhất của họ, ít nhất là trong các phần của học máy. ML vì thế đang trở thành một công cụ phổ biến cho các kỹ sư và nhà khoa học.
+
 
 <!--
 Frequently, the question of the AI apocalypse, or the AI singularity
@@ -2906,6 +3220,18 @@ More frivolously, we can ask Alexa to switch on the coffee machine.
 
 *dịch đoạn phía trên*
 
+Thông thường, câu hỏi về ngày tận thế AI, hay sự kỳ dị của AI
+đã được nêu ra trong các bài báo phi kỹ thuật về AI.
+Điều đáng sợ là bằng cách nào đó hệ thống máy học
+sẽ trở nên đa cảm và quyết định độc lập với các lập trình viên của họ
+(và thạc sĩ) về những thứ ảnh hưởng trực tiếp đến sinh kế của con người.
+Ở một mức độ nào đó, AI đã ảnh hưởng đến sinh kế của con người
+một cách tức thời --- uy tín tín dụng được đánh giá tự động,
+autopilots chủ yếu điều hướng xe ô tô, quyết định về
+có cho phép tại ngoại sử dụng dữ liệu thống kê làm đầu vào.
+Phù phiếm hơn, chúng ta có thể yêu cầu Alexa bật máy pha cà phê.
+
+
 <!--
 Fortunately, we are far from a sentient AI system
 that is ready to manipulate its human creators (or burn their coffee).
@@ -2921,6 +3247,19 @@ while trying to solve general tasks.
 -->
 
 *dịch đoạn phía trên*
+
+May mắn thay, chúng ta cách xa một hệ thống AI đa cảm
+đã sẵn sàng để thao túng người tạo ra nó (hoặc đốt cà phê của họ).
+Đầu tiên, các hệ thống AI được thiết kế, đào tạo và triển khai một cách cụ thể,
+cách định hướng mục tiêu. Trong khi hành vi của họ có thể tạo ảo giác
+của trí thông minh chung, nó là sự kết hợp của các quy tắc, heuristic
+và các mô hình thống kê làm nền tảng cho thiết kế.
+Thứ hai, hiện tại các công cụ cho * trí thông minh nhân tạo *
+chỉ đơn giản là không tồn tại mà có thể cải thiện bản thân,
+lý do về bản thân và có thể sửa đổi,
+mở rộng và cải thiện kiến trúc của riêng họ
+trong khi cố gắng giải quyết các nhiệm vụ chung.
+
 
 <!--
 A much more pressing concern is how AI is being used in our daily lives.
@@ -2943,6 +3282,24 @@ than the potential of malevolent superintelligence to destroy humanity.
 
 *dịch đoạn phía trên*
 
+Một mối quan tâm cấp bách hơn nhiều là cách AI đang được sử dụng trong cuộc sống hàng ngày của chúng ta.
+Có khả năng nhiều nhiệm vụ nguy hiểm được thực hiện bởi các tài xế xe tải
+và trợ lý cửa hàng có thể và sẽ được tự động.
+Robot nông nghiệp có thể sẽ giảm chi phí cho canh tác hữu cơ
+nhưng họ cũng sẽ tự động hóa hoạt động thu hoạch.
+Giai đoạn này của cuộc cách mạng công nghiệp
+có thể có những hậu quả sâu sắc đối với những vùng rộng lớn của xã hội
+(tài xế xe tải và trợ lý cửa hàng là một số
+của các công việc phổ biến nhất ở nhiều tiểu bang).
+Hơn nữa, các mô hình thống kê, khi áp dụng mà không cần quan tâm
+có thể dẫn đến sự phân biệt chủng tộc, giới tính hoặc tuổi tác và nâng cao
+mối quan tâm hợp lý về sự công bằng thủ tục
+nếu tự động để lái các quyết định hậu quả.
+Điều quan trọng là đảm bảo rằng các thuật toán này được sử dụng cẩn thận.
+Với những gì chúng ta biết ngày nay, điều này gây cho chúng ta một mối quan tâm cấp bách hơn nhiều
+hơn tiềm năng của siêu trí tuệ độc ác để tiêu diệt loài người.
+
+
 <!-- =================== Kết thúc dịch Phần 33 ==================== -->
 
 <!-- =================== Bắt đầu dịch Phần 34 ==================== -->
@@ -2953,6 +3310,8 @@ than the potential of malevolent superintelligence to destroy humanity.
 
 ## *dịch tiêu đề phía trên*
 
+## Tóm tắt
+
 <!--
 * Machine learning studies how computer systems can leverage *experience* (often data) to improve performance at specific tasks. It combines ideas from statistics, data mining, artificial intelligence, and optimization. Often, it is used as a means of implementing artificially-intelligent solutions.
 * As a class of machine learning, representational learning focuses on how to automatically find the appropriate way to represent data. This is often accomplished by a progression of learned transformations.
@@ -2962,11 +3321,20 @@ than the potential of malevolent superintelligence to destroy humanity.
 
 *dịch đoạn phía trên*
 
+* Học máy nghiên cứu làm thế nào các hệ thống máy tính có thể tận dụng * kinh nghiệm * (thường là dữ liệu) để cải thiện hiệu suất ở các tác vụ cụ thể. Nó kết hợp các ý tưởng từ thống kê, khai thác dữ liệu, trí tuệ nhân tạo và tối ưu hóa. Thông thường, nó được sử dụng như một phương tiện để thực hiện các giải pháp thông minh nhân tạo.
+* Là một lớp học máy, học đại diện tập trung vào cách tự động tìm cách thích hợp để biểu diễn dữ liệu. Điều này thường được thực hiện bằng một sự tiến triển của các biến đổi đã học.
+* Phần lớn tiến bộ gần đây trong học tập sâu đã được kích hoạt bởi sự phong phú của dữ liệu phát sinh từ các cảm biến giá rẻ và các ứng dụng quy mô Internet và bằng tiến bộ đáng kể trong tính toán, chủ yếu thông qua GPU.
+* Tối ưu hóa toàn bộ hệ thống là một thành phần quan trọng để có được hiệu suất tốt. Sự sẵn có của các khung học sâu hiệu quả đã giúp cho việc thiết kế và thực hiện việc này trở nên dễ dàng hơn đáng kể.
+
+
 <!--
 ## Exercises
 -->
 
 ## *dịch tiêu đề phía trên*
+
+## Bài tập
+
 
 <!--
 1. Which parts of code that you are currently writing could be "learned", i.e., improved by learning and automatically determining design choices that are made in your code? Does your code include heuristic design choices?
@@ -2976,6 +3344,12 @@ than the potential of malevolent superintelligence to destroy humanity.
 -->
 
 *dịch đoạn phía trên*
+
+1. Phần nào của mã mà bạn hiện đang viết có thể được "học", tức là, được cải thiện bằng cách học và tự động xác định các lựa chọn thiết kế được thực hiện trong mã của bạn? Mã của bạn có bao gồm các lựa chọn thiết kế tự khám phá (heuristic design choices)?
+1. Những vấn đề mà bạn gặp phải có nhiều ví dụ về cách giải quyết chúng, nhưng không có cách cụ thể nào để tự động hóa chúng? Đây có thể là ứng cử viên chính cho việc sử dụng học tập sâu.
+1. Xem sự phát triển của trí tuệ nhân tạo như một cuộc cách mạng công nghiệp mới, mối quan hệ giữa thuật toán và dữ liệu là gì? Nó có giống với động cơ hơi nước và than không (sự khác biệt cơ bản) là gì?
+1. Trường hợp khác bạn có thể áp dụng phương pháp đào tạo từ đầu đến cuối? Vật lý? Kỹ thuật? Kinh tế lượng?
+
 
 <!--
 ## [Discussions](https://discuss.mxnet.io/t/2310)
