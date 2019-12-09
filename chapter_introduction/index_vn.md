@@ -1673,6 +1673,9 @@ Ngày nay, các công cụ tìm kiếm sử dụng các mô hình hành vi và h
 #### *dịch tiêu đề phía trên*
 :label:`subsec_recommender_systems`
 
+#### Hệ thống giới thiệu
+
+
 <!--
 Recommender systems are another problem setting
 that is related to search and ranking.
@@ -1689,6 +1692,13 @@ e.g., for retail products, music, or news recommendation.
 
 *dịch đoạn phía trên*
 
+Hệ thống đề xuất là một thiết lập vấn đề khác có liên quan đến tìm kiếm và xếp hạng.
+Các vấn đề tương tự trong chừng mực vì mục tiêu là hiển thị một tập hợp các mục có liên quan cho người dùng.
+Sự khác biệt chính là sự nhấn mạnh vào * cá nhân hóa * cho người dùng cụ thể trong bối cảnh các hệ thống đề xuất.
+Chẳng hạn, đối với các đề xuất phim, trang kết quả cho người hâm mộ SciFi và trang kết quả cho người sành phim hài Peter Sellers có thể khác nhau đáng kể.
+Các vấn đề tương tự xuất hiện trong các cài đặt đề xuất khác, ví dụ: đối với các sản phẩm bán lẻ, âm nhạc hoặc đề xuất tin tức.
+
+
 <!--
 In some cases, customers provide explicit feedback communicating
 how much they liked a particular product
@@ -1704,6 +1714,11 @@ or the probability of purchase, given a user $u_i$ and product $p_j$.
 
 *dịch đoạn phía trên*
 
+Trong một số trường hợp, khách hàng cung cấp phản hồi rõ ràng truyền đạt mức độ họ thích một sản phẩm cụ thể (ví dụ: xếp hạng và đánh giá sản phẩm trên Amazon, IMDB, GoodReads, v.v.).
+Trong một số trường hợp khác, họ cung cấp phản hồi ngầm, ví dụ: bằng cách bỏ qua các tiêu đề trên danh sách phát, điều này có thể cho thấy sự không hài lòng nhưng có thể chỉ ra rằng bài hát không phù hợp trong ngữ cảnh.
+Trong các công thức đơn giản nhất, các hệ thống này được đào tạo để ước tính một số điểm $ y_ {ij} $, chẳng hạn như xếp hạng ước tính hoặc xác suất mua hàng, được cung cấp cho người dùng $ u_i $ và sản phẩm $ p_j $.
+
+
 <!--
 Given such a model, then for any given user,
 we could retrieve the set of objects with the largest scores $y_{ij}$,
@@ -1716,12 +1731,20 @@ of deep learning books recommended by Amazon based on personalization algorithms
 
 *dịch đoạn phía trên*
 
+Với một mô hình như vậy, sau đó đối với bất kỳ người dùng cụ thể nào, chúng tôi có thể truy xuất tập hợp các đối tượng có điểm số lớn nhất $ y_ {ij} $, sau đó có thể được đề xuất cho khách hàng.
+Các hệ thống sản xuất tiên tiến hơn đáng kể và tính đến hoạt động chi tiết của người dùng và các đặc điểm của mặt hàng khi tính toán các điểm số đó. : numref: `fig_deeplearning_amazon` là một ví dụ về những cuốn sách học sâu được Amazon khuyến nghị dựa trên các thuật toán cá nhân hóa được điều chỉnh để nắm bắt sở thích của tác giả.
+
+
 <!--
 ![Deep learning books recommended by Amazon.](../img/deeplearning_amazon.png)
 -->
 
 ![*dịch chú thích ảnh phía trên*](../img/deeplearning_amazon.png)
 :label:`fig_deeplearning_amazon`
+
+
+! [Sách học sâu được đề xuất bởi Amazon.] (../ img / deeplearning_amazon.png)
+
 
 <!--
 Despite their tremendous economic value, recommendation systems
@@ -1744,6 +1767,13 @@ incentives, and feedback loops, are important open research questions.
 
 *dịch đoạn phía trên*
 
+Mặc dù có giá trị kinh tế to lớn, các hệ thống khuyến nghị được xây dựng một cách ngây thơ trên các mô hình dự đoán phải chịu một số sai sót nghiêm trọng về mặt khái niệm.
+Để bắt đầu, chúng tôi chỉ quan sát * phản hồi bị kiểm duyệt *. Người dùng ưu tiên đánh giá những bộ phim mà họ cảm thấy thích thú:
+bạn có thể nhận thấy rằng các mục nhận được nhiều xếp hạng 5 và 1 sao nhưng có rất ít xếp hạng 3 sao. Hơn nữa, thói quen mua hàng hiện tại thường là kết quả của thuật toán đề xuất hiện tại, nhưng thuật toán học tập không phải lúc nào cũng tính đến chi tiết này.
+Do đó, các vòng phản hồi có thể hình thành trong đó một hệ thống đề xuất ưu tiên đẩy một mặt hàng sau đó trở nên tốt hơn (do mua nhiều hơn) và đến lượt nó được đề xuất thường xuyên hơn.
+Nhiều trong số những vấn đề này về cách đối phó với kiểm duyệt, khuyến khích và các vòng phản hồi, là những câu hỏi nghiên cứu mở quan trọng.
+
+
 <!-- =================== Kết thúc dịch Phần 19 ==================== -->
 
 <!-- =================== Bắt đầu dịch Phần 20 ==================== -->
@@ -1753,6 +1783,9 @@ incentives, and feedback loops, are important open research questions.
 -->
 
 #### *dịch tiêu đề phía trên*
+
+#### Trình tự học
+
 
 <!--
 So far, we have looked at problems where we have
@@ -1770,6 +1803,11 @@ the model immediately forgets what it just saw.
 
 *dịch đoạn phía trên*
 
+Cho đến nay, chúng tôi đã xem xét các vấn đề trong đó chúng tôi có một số đầu vào cố định và sản xuất một số lượng đầu ra cố định.
+Trước khi chúng tôi xem xét dự đoán giá nhà từ một bộ tính năng cố định: diện tích, số phòng ngủ, số phòng tắm, thời gian đi bộ đến trung tâm thành phố.
+Chúng tôi cũng đã thảo luận về ánh xạ từ một hình ảnh (có kích thước cố định) đến các xác suất dự đoán rằng nó thuộc về một số lớp cố định hoặc lấy ID người dùng và ID sản phẩm và dự đoán xếp hạng sao. Trong những trường hợp này, một khi chúng ta đưa đầu vào có độ dài cố định vào mô hình để tạo đầu ra, mô hình sẽ ngay lập tức quên đi những gì nó vừa thấy.
+
+
 <!--
 This might be fine if our inputs truly all have the same dimensions
 and if successive inputs truly have nothing to do with each other.
@@ -1784,6 +1822,12 @@ in some source language and predicting their translation in another language.
 
 *dịch đoạn phía trên*
 
+Điều này có thể ổn nếu tất cả các đầu vào của chúng ta thực sự có cùng kích thước và nếu các đầu vào kế tiếp thực sự không liên quan gì đến nhau.
+Nhưng làm thế nào chúng ta sẽ đối phó với đoạn video? Trong trường hợp này, mỗi đoạn có thể bao gồm một số khung khác nhau.
+Và dự đoán của chúng tôi về những gì đang diễn ra trong mỗi khung hình có thể mạnh hơn nhiều nếu chúng ta tính đến các khung trước đó hoặc thành công.
+Ngôn ngữ cũng vậy. Một vấn đề học sâu phổ biến là dịch máy: nhiệm vụ nhập câu trong một số ngôn ngữ nguồn và dự đoán bản dịch của chúng bằng ngôn ngữ khác.
+
+
 <!--
 These problems also occur in medicine.
 We might want a model to monitor patients in the intensive care unit
@@ -1795,6 +1839,10 @@ and just make its predictions based on the most recent measurements.
 -->
 
 *dịch đoạn phía trên*
+
+Những vấn đề này cũng xảy ra trong y học. Chúng tôi có thể muốn một mô hình giám sát bệnh nhân trong phòng chăm sóc đặc biệt và tắt cảnh báo nếu nguy cơ tử vong trong 24 giờ tới vượt quá ngưỡng.
+Chúng tôi chắc chắn sẽ không muốn mô hình này vứt bỏ mọi thứ nó biết về lịch sử bệnh nhân mỗi giờ và chỉ đưa ra dự đoán dựa trên các phép đo gần đây nhất.
+
 
 <!--
 These problems are among the most exciting applications of machine learning
@@ -1808,6 +1856,12 @@ a number of special cases are worth mentioning:
 -->
 
 *dịch đoạn phía trên*
+
+Những vấn đề này là một trong những ứng dụng thú vị nhất của học máy và chúng là những trường hợp của * học theo trình tự *.
+Họ yêu cầu một mô hình để nhập các chuỗi đầu vào hoặc để phát ra các chuỗi đầu ra (hoặc cả hai!).
+Những vấn đề sau này đôi khi được gọi là các vấn đề `` seq2seq``. bản dịch ngôn ngữ là một vấn đề `` seq2seq``.
+Việc sao chép văn bản từ lời nói cũng là một vấn đề `` seq2seq``. Mặc dù không thể xem xét tất cả các loại biến đổi trình tự, một số trường hợp đặc biệt đáng được đề cập:
+
 
 <!-- =================== Kết thúc dịch Phần 20 ==================== -->
 
@@ -1827,10 +1881,20 @@ with tags indicating which words refer to named entities.
 
 *dịch đoạn phía trên*
 
+** Gắn thẻ và phân tích cú pháp **. Điều này liên quan đến việc chú thích một chuỗi văn bản với các thuộc tính.
+Nói cách khác, số lượng đầu vào và đầu ra về cơ bản là giống nhau.
+Chẳng hạn, chúng ta có thể muốn biết động từ và chủ ngữ ở đâu.
+Ngoài ra, chúng tôi có thể muốn biết những từ nào là các thực thể được đặt tên.
+Nói chung, mục tiêu là phân tách và chú thích văn bản dựa trên các giả định về cấu trúc và ngữ pháp để có được một số chú thích.
+Điều này nghe có vẻ phức tạp hơn thực tế. Dưới đây là một ví dụ rất đơn giản về việc chú thích một câu với các thẻ chỉ ra những từ nào đề cập đến các thực thể được đặt tên.
+
+
 ```text
 Tom has dinner in Washington with Sally.
 Ent  -    -    -     Ent      -    Ent
 ```
+
+Tom ăn tối ở Washington với Sally.
 
 
 <!--
@@ -1845,6 +1909,11 @@ These are ``seq2seq`` problems where the output is much shorter than the input.
 -->
 
 *dịch đoạn phía trên*
+
+** Tự động nhận dạng giọng nói **. Với nhận dạng giọng nói, chuỗi đầu vào $ x $ là bản ghi âm của loa (hiển thị trong: numref: `fig_speech`) và đầu ra $ y $ là bản ghi văn bản của những gì người nói nói.
+Thách thức là có nhiều khung âm thanh hơn (âm thanh thường được lấy mẫu ở mức 8kHz hoặc 16kHz) so với văn bản, tức là, không có sự tương ứng 1: 1 giữa âm thanh và văn bản, vì hàng ngàn mẫu tương ứng với một từ được nói.
+Đây là những vấn đề `` seq2seq`` trong đó đầu ra ngắn hơn nhiều so với đầu vào.
+
 
 <!--
 ![`-D-e-e-p- L-ea-r-ni-ng-`](../img/speech.png)
@@ -1865,6 +1934,11 @@ this is not quite so trivial for computers.
 
 *dịch đoạn phía trên*
 
+** Văn bản thành lời nói **. Chuyển văn bản thành giọng nói (TTS) là nghịch đảo của nhận dạng giọng nói.
+Nói cách khác, đầu vào $ x $ là văn bản và đầu ra $ y $ là một tệp âm thanh.
+Trong trường hợp này, đầu ra * dài hơn * nhiều so với đầu vào. Mặc dù rất dễ để * người * nhận ra một tệp âm thanh xấu, nhưng điều này không quá tầm thường đối với máy tính.
+
+
 <!--
 **Machine Translation**. Unlike the case of speech recognition, where corresponding
 inputs and outputs occur in the same order (after alignment),
@@ -1878,6 +1952,9 @@ to place the verbs at the end of sentences.
 -->
 
 *dịch đoạn phía trên*
+
+**Dịch máy**. Không giống như trường hợp nhận dạng giọng nói, trong đó đầu vào và đầu ra tương ứng xảy ra theo cùng một thứ tự (sau khi căn chỉnh), trong dịch máy, đảo ngược thứ tự có thể rất quan trọng. Nói cách khác, trong khi chúng ta vẫn đang chuyển đổi một chuỗi thành một chuỗi khác, thì cả số lượng đầu vào và đầu ra cũng như thứ tự của các điểm dữ liệu tương ứng đều được coi là giống nhau. Hãy xem xét ví dụ minh họa sau đây về xu hướng đặc biệt của người Đức để đặt các động từ ở cuối câu.
+
 
 ```text
 German:           Haben Sie sich schon dieses grossartige Lehrwerk angeschaut?
@@ -1898,6 +1975,10 @@ across long temporal distances. This is an active area of research.
 
 *dịch đoạn phía trên*
 
+Nhiều vấn đề liên quan nổi lên trong các nhiệm vụ học tập khác. Chẳng hạn, việc xác định thứ tự người dùng đọc một trang web là một vấn đề phân tích bố cục hai chiều.
+Các vấn đề đối thoại thể hiện tất cả các loại phức tạp bổ sung, trong đó việc xác định những gì cần nói tiếp theo đòi hỏi phải tính đến kiến thức trong thế giới thực và trạng thái trước của cuộc trò chuyện qua các khoảng cách thời gian dài. Đây là một lĩnh vực hoạt động nghiên cứu.
+
+
 <!-- =================== Kết thúc dịch Phần 21 ==================== -->
 
 <!-- =================== Bắt đầu dịch Phần 22 ==================== -->
@@ -1907,6 +1988,8 @@ across long temporal distances. This is an active area of research.
 -->
 
 ### *dịch tiêu đề phía trên*
+
+### Học không giám sát
 
 <!--
 All the examples so far were related to *Supervised Learning*,
@@ -1924,6 +2007,12 @@ and imitate their actions.
 
 *dịch đoạn phía trên*
 
+Tất cả các ví dụ cho đến nay đều liên quan đến * Học có giám sát *, tức là, các tình huống chúng tôi cung cấp cho mô hình một tập dữ liệu khổng lồ chứa cả các tính năng và giá trị đích tương ứng.
+Bạn có thể nghĩ về người học được giám sát là có một công việc cực kỳ chuyên môn và một ông chủ cực kỳ hậu môn.
+Sếp đứng trên vai bạn và cho bạn biết chính xác phải làm gì trong mọi tình huống cho đến khi bạn học cách lập bản đồ từ các tình huống đến hành động.
+Làm việc cho một ông chủ như vậy nghe có vẻ khá khập khiễng. Mặt khác, thật dễ dàng để làm hài lòng ông chủ này. Bạn chỉ cần nhận ra mô hình càng nhanh càng tốt và bắt chước hành động của họ.
+
+
 <!--
 In a completely opposite way, it could be frustrating
 to work for a boss who has no idea what they want you to do.
@@ -1938,6 +2027,12 @@ we describe a few of the questions you might ask:
 -->
 
 *dịch đoạn phía trên*
+
+Theo một cách hoàn toàn ngược lại, nó có thể gây khó chịu khi làm việc cho một ông chủ không biết họ muốn bạn làm gì.
+Tuy nhiên, nếu bạn có kế hoạch trở thành một nhà khoa học dữ liệu, bạn nên làm quen với nó. Sếp có thể chỉ đưa cho bạn một đống dữ liệu khổng lồ và bảo bạn * làm một số khoa học dữ liệu với nó! * Điều này nghe có vẻ mơ hồ bởi vì nó là.
+Chúng tôi gọi lớp vấn đề này là * học tập không giám sát *, và loại và số lượng câu hỏi chúng tôi có thể hỏi chỉ bị giới hạn bởi sự sáng tạo của chúng tôi.
+Chúng tôi sẽ giải quyết một số kỹ thuật học tập không giám sát trong các chương sau. Để kích thích sự thèm ăn của bạn bây giờ, chúng tôi mô tả một số câu hỏi bạn có thể hỏi:
+
 
 <!--
 * Can we find a small number of prototypes
@@ -1981,6 +2076,22 @@ We will devote a few notebooks to them.
 
 *dịch đoạn phía trên*
 
+* Chúng ta có thể tìm thấy một số lượng nhỏ các nguyên mẫu tóm tắt chính xác dữ liệu không?
+Đưa ra một bộ ảnh, chúng ta có thể nhóm chúng thành ảnh phong cảnh, hình ảnh của chó, trẻ sơ sinh, mèo, đỉnh núi, v.v.?
+Tương tự, với một bộ sưu tập các hoạt động duyệt web của người dùng, chúng ta có thể nhóm họ thành những người dùng có hành vi tương tự không?
+Vấn đề này thường được gọi là * phân cụm *. * Chúng ta có thể tìm thấy một số lượng nhỏ các tham số nắm bắt chính xác các thuộc tính có liên quan của dữ liệu không?
+Các quỹ đạo của một quả bóng được mô tả khá tốt bởi vận tốc, đường kính và khối lượng của quả bóng.
+Thợ may đã phát triển một số lượng nhỏ các thông số mô tả hình dạng cơ thể con người khá chính xác cho mục đích phù hợp với quần áo.
+Những vấn đề này được gọi là các vấn đề * ước tính không gian con *. Nếu sự phụ thuộc là tuyến tính, nó được gọi là * phân tích thành phần chính *.
+* Có đại diện cho các đối tượng (có cấu trúc tùy ý) trong không gian Euclide (tức là không gian của vectơ trong $ \ mathbb {R} ^ n $) sao cho các thuộc tính tượng trưng có thể được kết hợp tốt?
+Điều này được gọi là * học đại diện * và nó được sử dụng để mô tả các thực thể và mối quan hệ của chúng, chẳng hạn như Rome $ - $ Italy $ + $ France $ = $ Paris.
+* Có mô tả về nguyên nhân gốc rễ của phần lớn dữ liệu mà chúng ta quan sát không?
+Chẳng hạn, nếu chúng ta có dữ liệu nhân khẩu học về giá nhà, ô nhiễm, tội phạm, địa điểm, giáo dục, tiền lương, v.v., chúng ta có thể khám phá ra chúng có liên quan đơn giản dựa trên dữ liệu thực nghiệm không?
+Các trường liên quan đến * mô hình nhân quả * và * xác suất * giải quyết vấn đề này.
+* Một sự phát triển quan trọng và thú vị gần đây trong học tập không giám sát là sự ra đời của * mạng đối thủ thế hệ *. Chúng cho chúng ta một cách thủ tục để tổng hợp dữ liệu, thậm chí dữ liệu có cấu trúc phức tạp như hình ảnh và âm thanh.
+Các cơ chế thống kê cơ bản là các thử nghiệm để kiểm tra xem dữ liệu thật và giả có giống nhau hay không. Chúng tôi sẽ dành một vài cuốn sổ cho họ.
+
+
 <!-- =================== Kết thúc dịch Phần 22 ==================== -->
 
 <!-- =================== Bắt đầu dịch Phần 23 ==================== -->
@@ -1990,6 +2101,9 @@ We will devote a few notebooks to them.
 -->
 
 ### *dịch tiêu đề phía trên*
+
+### Tương tác với môi trường
+
 
 <!--
 So far, we have not discussed where data actually comes from,
@@ -2007,9 +2121,19 @@ For supervised learning, the process looks like :numref:`fig_data_collection`.
 
 *dịch đoạn phía trên*
 
+Cho đến nay, chúng ta vẫn chưa thảo luận về việc dữ liệu thực sự đến từ đâu, hoặc những gì thực sự * xảy ra * khi một mô hình học máy tạo ra một đầu ra.
+Đó là bởi vì học có giám sát và học không giám sát không giải quyết những vấn đề này một cách rất tinh vi.
+Trong cả hai trường hợp, chúng tôi lấy một đống dữ liệu lớn lên phía trước, sau đó đặt các máy nhận dạng mẫu của chúng tôi chuyển động mà không bao giờ tương tác với môi trường nữa.
+Bởi vì tất cả việc học diễn ra sau khi thuật toán bị ngắt kết nối với môi trường, nên đôi khi nó được gọi là * học ngoại tuyến *.
+Đối với việc học có giám sát, quá trình này có dạng: numref: `fig_data_collection`.
+
+
 <!--
 ![Collect data for supervised learning from an environment.](../img/data-collection.svg)
 -->
+
+! [Thu thập dữ liệu để học có giám sát từ một môi trường.] (../ img / data-sưu tập.svg)
+
 
 ![*dịch chú thích ảnh phía trên*](../img/data-collection.svg)
 :label:`fig_data_collection`
@@ -2033,6 +2157,11 @@ impact the future observations of the agent.
 
 *dịch đoạn phía trên*
 
+Sự đơn giản này của học ngoại tuyến có sức hấp dẫn của nó. Ưu điểm là chúng ta có thể lo lắng về việc nhận dạng mẫu trong sự cô lập, mà không có bất kỳ sự phân tâm nào từ những vấn đề khác này.
+Nhưng nhược điểm là việc xây dựng vấn đề khá hạn chế. Nếu bạn tham vọng hơn, hoặc nếu bạn lớn lên đọc Sê-ri Robot của Asimov, thì bạn có thể tưởng tượng các bot thông minh nhân tạo không chỉ có khả năng đưa ra dự đoán mà còn thực hiện các hành động trên thế giới.
+Chúng tôi muốn nghĩ về các tác nhân * thông minh *, không chỉ là các mô hình * dự đoán *. Điều đó có nghĩa là chúng ta cần suy nghĩ về việc chọn * hành động *, không chỉ đưa ra * dự đoán *. Hơn nữa, không giống như dự đoán, hành động thực sự tác động đến môi trường.
+Nếu chúng ta muốn đào tạo một tác nhân thông minh, chúng ta phải tính đến cách hành động của nó có thể ảnh hưởng đến các quan sát trong tương lai của tác nhân.
+
 
 <!--
 Considering the interaction with an environment
@@ -2041,6 +2170,9 @@ Does the environment:
 -->
 
 *dịch đoạn phía trên*
+
+Việc xem xét sự tương tác với một môi trường sẽ mở ra một loạt các câu hỏi mô hình mới.
+Môi trường:
 
 <!--
 * Remember what we did previously?
@@ -2051,6 +2183,12 @@ Does the environment:
 -->
 
 *dịch đoạn phía trên*
+
+* Hãy nhớ những gì chúng ta đã làm trước đây? 
+* Bạn muốn giúp chúng tôi, ví dụ: người dùng đọc văn bản vào trình nhận dạng giọng nói? 
+* Bạn muốn đánh bại chúng tôi, tức là, một cài đặt đối nghịch như lọc thư rác (chống lại kẻ gửi thư rác) hoặc chơi trò chơi (so với đối thủ)? 
+* Không quan tâm (như trong nhiều trường hợp)? * Có sự thay đổi động lực (dữ liệu trong tương lai luôn giống với quá khứ hoặc các mô hình thay đổi theo thời gian, một cách tự nhiên hoặc đáp ứng với các công cụ tự động của chúng tôi)?
+
 
 <!--
 This last question raises the problem of *distribution shift*,
@@ -2064,6 +2202,11 @@ two settings that explicitly consider interaction with an environment.
 
 *dịch đoạn phía trên*
 
+Câu hỏi cuối cùng này đặt ra vấn đề về * sự thay đổi phân phối *, (khi dữ liệu đào tạo và kiểm tra khác nhau).
+Đó là một vấn đề mà hầu hết chúng ta đã trải qua khi làm bài kiểm tra được viết bởi một giảng viên, trong khi các bài tập về nhà được sáng tác bởi các TA của cô ấy.
+Chúng tôi sẽ mô tả ngắn gọn về học tập củng cố và học tập đối nghịch, hai cài đặt xem xét rõ ràng sự tương tác với một môi trường.
+
+
 <!-- =================== Kết thúc dịch Phần 23 ==================== -->
 
 <!-- =================== Bắt đầu dịch Phần 24 ==================== -->
@@ -2073,6 +2216,8 @@ two settings that explicitly consider interaction with an environment.
 -->
 
 ### *dịch tiêu đề phía trên*
+
+### Học tăng cường
 
 <!--
 If you are interested in using machine learning
@@ -2088,6 +2233,14 @@ and the [AlphaGo program that dethroned the world champion at the board game Go]
 -->
 
 *dịch đoạn phía trên*
+
+Nếu bạn quan tâm đến việc sử dụng máy học để phát triển một tác nhân tương tác với môi trường và thực hiện các hành động, thì có lẽ bạn sẽ kết thúc
+tập trung vào * học tăng cường * (RL).
+Điều này có thể bao gồm các ứng dụng cho robot, cho các hệ thống đối thoại và thậm chí để phát triển AI cho các trò chơi video.
+* Học tập củng cố sâu * (DRL), áp dụng mạng lưới thần kinh sâu cho các vấn đề RL, đã tăng phổ biến.
+Bước đột phá [mạng Q sâu đánh bại con người tại các trò chơi Atari chỉ bằng cách sử dụng đầu vào trực quan] (https://www.wired.com/2015/02/google-ai-plays-atari-like-pros/),
+và [Chương trình AlphaGo đã truất ngôi nhà vô địch thế giới tại trò chơi cờ vây] (https://www.wired.com/2017/05/googles-alphago-trounces-humans-also-gives-boost/) là hai ví dụ nổi bật .
+
 
 <!--
 Reinforcement learning gives a very general statement of a problem,
@@ -2107,11 +2260,22 @@ The goal of reinforcement learning is to produce a good policy.
 
 *dịch đoạn phía trên*
 
+Học tăng cường đưa ra một tuyên bố rất chung về một vấn đề, trong đó một tác nhân tương tác với một môi trường qua một loạt * dấu thời gian *.
+Tại mỗi dấu thời gian $ t $, tác nhân nhận được một số quan sát $ o_t $ từ môi trường và phải chọn một hành động $ a_t $ sau đó được truyền trở lại môi trường thông qua một số cơ chế (đôi khi được gọi là bộ chấp hành).
+Cuối cùng, đại lý nhận được phần thưởng $ r_t $ từ môi trường. Tác nhân sau đó nhận được một quan sát tiếp theo và chọn một hành động tiếp theo, v.v.
+Hành vi của một đại lý RL được điều chỉnh bởi một * chính sách *. Nói tóm lại, một * chính sách * chỉ là một chức năng ánh xạ từ các quan sát (của môi trường) đến các hành động.
+Mục tiêu của học tập củng cố là tạo ra một chính sách tốt.
+
+
 <!--
 ![The interaction between reinforcement learning and an environment.](../img/rl-environment.svg)
 -->
 
 ![*dịch chú thích ảnh phía trên*](../img/rl-environment.svg)
+
+
+! [Sự tương tác giữa học tập củng cố và môi trường.] (../ img / rl-môi trường.svg)
+
 
 <!--
 It is hard to overstate the generality of the RL framework.
@@ -2124,6 +2288,13 @@ from the original supervised problem.
 -->
 
 *dịch đoạn phía trên*
+
+Thật khó để nói quá về tính tổng quát của khung RL.
+Ví dụ: chúng ta có thể đặt bất kỳ vấn đề học tập có giám sát nào thành vấn đề RL.
+Nói rằng chúng tôi đã có một vấn đề phân loại.
+Chúng ta có thể tạo một tác nhân RL với một * hành động * tương ứng với mỗi lớp.
+Sau đó chúng ta có thể tạo ra một môi trường đưa ra phần thưởng hoàn toàn bằng với hàm tổn thất từ vấn đề được giám sát ban đầu.
+
 
 <!-- =================== Kết thúc dịch Phần 24 ==================== -->
 
@@ -2142,6 +2313,12 @@ Moreover, the environment may not even tell us which actions led to the reward.
 
 *dịch đoạn phía trên*
 
+Điều đó đang được nói, RL cũng có thể giải quyết nhiều vấn đề mà việc học có giám sát không thể.
+Ví dụ, trong học tập có giám sát, chúng tôi luôn mong đợi rằng đầu vào đào tạo đi kèm với nhãn chính xác.
+Nhưng trong RL, chúng tôi không cho rằng với mỗi quan sát, môi trường cho chúng ta biết hành động tối ưu.
+Nói chung, chúng tôi chỉ nhận được một số phần thưởng. Hơn nữa, môi trường thậm chí có thể không cho chúng ta biết hành động nào dẫn đến phần thưởng.
+
+
 <!--
 Consider for example the game of chess.
 The only real reward signal comes at the end of the game
@@ -2158,6 +2335,13 @@ what actions along the way led to the promotion.
 
 *dịch đoạn phía trên*
 
+Hãy xem xét ví dụ như trò chơi cờ vua. Tín hiệu phần thưởng thực sự duy nhất xuất hiện vào cuối trò chơi khi chúng tôi thắng, chúng tôi có thể chỉ định phần thưởng là 1 hoặc khi chúng tôi thua, chúng tôi có thể chỉ định phần thưởng là -1.
+Vì vậy, người học củng cố phải đối phó với * vấn đề chuyển nhượng tín dụng *: xác định hành động nào để ghi có hoặc đổ lỗi cho kết quả.
+Điều tương tự cũng xảy ra với một nhân viên được thăng chức vào ngày 11 tháng 10.
+Khuyến mãi đó có khả năng phản ánh một số lượng lớn các hành động được lựa chọn tốt trong năm trước.
+Nhận được nhiều khuyến mãi hơn trong tương lai đòi hỏi phải tìm ra những hành động trên đường dẫn đến chương trình khuyến mãi.
+
+
 <!--
 Reinforcement learners may also have to deal
 with the problem of partial observability.
@@ -2171,6 +2355,12 @@ might require considering its previous observations before entering the closet.
 
 *dịch đoạn phía trên*
 
+Người học tăng cường cũng có thể phải đối phó với vấn đề quan sát một phần.
+Đó là, quan sát hiện tại có thể không cho bạn biết mọi thứ về tình trạng hiện tại của bạn.
+Nói rằng một robot làm sạch thấy mình bị mắc kẹt trong một trong nhiều tủ quần áo giống hệt nhau trong một ngôi nhà.
+Suy ra vị trí chính xác (và do đó là trạng thái) của robot có thể yêu cầu xem xét các quan sát trước đó của nó trước khi vào tủ.
+
+
 <!--
 Finally, at any given point, reinforcement learners
 might know of one good policy,
@@ -2183,6 +2373,10 @@ potentially giving up some short-run reward in exchange for knowledge.
 -->
 
 *dịch đoạn phía trên*
+
+Cuối cùng, tại bất kỳ thời điểm nào, người học củng cố có thể biết về một chính sách tốt, nhưng có thể có nhiều chính sách khác tốt hơn mà đại lý chưa bao giờ thử.
+Người học củng cố phải liên tục chọn xem * khai thác * chiến lược được biết đến nhiều nhất hiện nay như một chính sách, hay * khám phá * không gian của các chiến lược, có khả năng từ bỏ một số phần thưởng ngắn hạn để đổi lấy kiến thức.
+
 
 <!-- =================== Kết thúc dịch Phần 25 ==================== -->
 
